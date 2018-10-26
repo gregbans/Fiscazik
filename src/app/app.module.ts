@@ -20,6 +20,8 @@ import { AuthService } from './services/auth.service';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import {Routes, RouterModule} from '@angular/router';
+import { VehiculeformComponent } from './car/vehiculeform/vehiculeform.component';
+import { SinglevehiculeComponent } from './car/singlevehicule/singlevehicule.component';
 
 
 const appRoutes: Routes = [
@@ -52,7 +54,9 @@ const appRoutes: Routes = [
     HabitationComponent,
     TutoComponent,
     ArchiveComponent,
-    HeaderComponent
+    HeaderComponent,
+    VehiculeformComponent,
+    SinglevehiculeComponent
   ],
   imports: [
     BrowserModule,
