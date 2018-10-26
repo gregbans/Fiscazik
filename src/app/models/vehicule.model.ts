@@ -1,3 +1,3 @@
 export class Vehicule {
-    constructor (public marque : string, modele: string, puissance: number){}
+    constructor (public marque : string, public modele: string, public puissance: number){}
 }

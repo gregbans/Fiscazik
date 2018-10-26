@@ -25,7 +25,7 @@ vehiculesSubscription: Subscription;
     this.vehiculeService.emitVehicules();
   }
 
-  onNewVheicule(){
+  onNewVehicule(){
     this.router.navigate(['/vehicule', 'new']); // a verifier si faut pas faire sauter le route 'new'
   }
 
