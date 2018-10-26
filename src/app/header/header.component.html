@@ -1,16 +1,22 @@
 <nav class="navbar navbar-default">
   <div class="conainer-fluid">
-    <ul class="nav navbar-nav">
-      <li routerLinkActive="active">
-        <a routerLink="list">liste</a>
+    <ul class="nav navbar-nav" *ngIf="isAuth">
+      <li routerLinkActive="active" >
+        <a routerLink="listing" >liste</a>
+      </li>
+      <li routerLinkActive="active" >
+        <a routerLink="vehicule" >vehicule</a>
     </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" *ngIf="!isAuth">
         <a routerLink="auth/signup">Créer un compte</a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" *ngIf="!isAuth">
           <a routerLink="auth/signin">connexion</a>
+      </li>
+      <li>
+        <a (click)="onSignOut()" *ngIf="isAuth" style="cursor: pointer">Déconnexion</a>
       </li>
     </ul>
   </div>

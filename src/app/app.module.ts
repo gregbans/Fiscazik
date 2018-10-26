@@ -25,14 +25,16 @@ import {Routes, RouterModule} from '@angular/router';
 const appRoutes: Routes = [
   {path: 'auth/signup', component: SignupComponent},
   {path: 'auth/signin', component: SigninComponent},
-  {path: 'listing', component: ListComponent },
-  {path: 'policy', component: PolicyComponent},
-  {path: 'revenu', component: RevenuComponent},
-  {path: 'vehicule', component: VehiculeComponent},
-  {path: 'Km', component: KmComponent},
-  {path: 'repas', component: RepasComponent},
-  {path: 'habitation', component: HabitationComponent},
-  {path: 'archive', component: ArchiveComponent},
+  {path: 'listing', canActivate:[AuthGuardService], component: ListComponent },
+  {path: 'policy', canActivate:[AuthGuardService], component: PolicyComponent},
+  {path: 'revenu', canActivate:[AuthGuardService], component: RevenuComponent},
+  {path: 'vehicule', canActivate:[AuthGuardService], component: VehiculeComponent},
+  {path: 'Km', canActivate:[AuthGuardService], component: KmComponent},
+  {path: 'repas', canActivate:[AuthGuardService], component: RepasComponent},
+  {path: 'habitation', canActivate:[AuthGuardService], component: HabitationComponent},
+  {path: 'archive', canActivate:[AuthGuardService], component: ArchiveComponent},
+  {path: '', redirectTo: 'listing', pathMatch: 'full'},
+  {path: '**', redirectTo: 'listing'}
 ]
 
 
