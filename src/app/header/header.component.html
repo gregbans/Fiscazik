@@ -2,11 +2,14 @@
   <div class="conainer-fluid">
     <ul class="nav navbar-nav" *ngIf="isAuth">
       <li routerLinkActive="active" >
-        <a routerLink="listing" >liste</a>
+        <a routerLink="listing" >Liste</a>
       </li>
       <li routerLinkActive="active" >
-        <a routerLink="vehicule" >vehicule</a>
+        <a routerLink="vehicule" >Vehicule</a>
     </li>
+    <li routerLinkActive="active" >
+        <a routerLink="Km">Kms</a>
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li routerLinkActive="active" *ngIf="!isAuth">

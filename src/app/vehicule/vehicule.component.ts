@@ -29,6 +29,7 @@ vehiculeForm: FormGroup;
         this.vehicules = vehicules;
       }
     );
+    this.vehiculeService.getVehicules();
     this.vehiculeService.emitVehicules();
   }
 

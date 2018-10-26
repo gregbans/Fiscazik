@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
+import {Routes, RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -14,14 +17,10 @@ import { HabitationComponent } from './habitation/habitation.component';
 import { TutoComponent } from './tuto/tuto.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { HeaderComponent } from './header/header.component';
+
+import { ListingService } from './services/listing.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
-
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
-import {Routes, RouterModule} from '@angular/router';
-import { VehiculeformComponent } from './car/vehiculeform/vehiculeform.component';
-import { SinglevehiculeComponent } from './car/singlevehicule/singlevehicule.component';
 
 
 const appRoutes: Routes = [
@@ -31,8 +30,6 @@ const appRoutes: Routes = [
   {path: 'policy', canActivate:[AuthGuardService], component: PolicyComponent},
   {path: 'revenu', canActivate:[AuthGuardService], component: RevenuComponent},
   {path: 'vehicule', canActivate:[AuthGuardService], component: VehiculeComponent},
-  { path: 'vehicule/new', component: VehiculeformComponent },
-  { path: 'vehicule/view/:id', component: SinglevehiculeComponent},
   {path: 'Km', canActivate:[AuthGuardService], component: KmComponent},
   {path: 'repas', canActivate:[AuthGuardService], component: RepasComponent},
   {path: 'habitation', canActivate:[AuthGuardService], component: HabitationComponent},
@@ -57,8 +54,6 @@ const appRoutes: Routes = [
     TutoComponent,
     ArchiveComponent,
     HeaderComponent,
-    VehiculeformComponent,
-    SinglevehiculeComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +66,7 @@ const appRoutes: Routes = [
   providers: [
     AuthGuardService,
     AuthService,
+    ListingService,
   ],
   bootstrap: [AppComponent]
 })

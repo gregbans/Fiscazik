@@ -1,3 +1,39 @@
-<p>
-  km works!
-</p>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h2>Selectionnez votre vehicule :</h2>
+        <form [formGroup]="kmForm" (ngSubmit)="onSaveKm()">
+          <div class="form-group" >
+              <label for="Km"></label>
+                <select class="form-control" id="km" formControlName="km" >
+                    <option ngFor="let Vehicule from vehiculeForm" value="{{vehicule}}"> {{vehicule}}</option>
+                </select>
+            </div>
+        </form>
+    
+    </div>
+    
+          <div class="col-sm-8 col-sm-offset-2">
+            <h2>Indiquez les Kms parcourus selon la longeur des trajets</h2>
+              <form [formGroup]="kmForm" (ngSubmit)="onSaveKm()">
+                  <div class="form-group">
+                    <label for="trajet5000">trajets inferieurs à 5000 kms :</label>
+                    <input type="text" class='form-control' id="trajet5000" formControlName="trajet5000">
+                  </div>
+                  <div class="form-group">
+                    <label for="trajet5_20">trajets entre 5 000 et 20 000 kms :</label>
+                    <input type="text" class='form-control' id="trajet5_20" formControlName="trajet5_20">
+                  </div>
+                  <div class="form-group">
+                      <label for="trajet20">trajets superieurs à 20 000 kms :</label>
+                      <input type="text" class='form-control' id="trajet20" formControlName="trajet20">
+                    </div>
+                    <div class="form-group">
+                      <h2 class="col-sm-8 col-sm-offset-2">Total défiscalisable : 
+                        <div  style="background-color: blue,">???</div></h2>
+                      </div>
+
+
+                  <button class="btn btn-success" [disabled]='kmForm.invalid' type="submit">Enregistrer</button>
+              </form>
+          </div>
+        </div>
