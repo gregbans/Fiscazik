@@ -1,21 +1,47 @@
 <div class="row">
-    <div class="col-xs-12">
-      <h2>mes vehicules</h2>
-      <div class="list-group">
-        <button
-          class="list-group-item"
-          *ngFor="let vehicule of vehicules; let i = index"
-          (click)="onViewVehicule(i)">
-          <h3 class="list-group-item-heading">
-            {{ vehicule.marque }}
-            <button class="btn btn-default pull-right" (click)="onDeleteVehicule(vehicule)">
-              <span class="glyphicon glyphicon-minus"></span>
-            </button>
-          </h3>
-          <p class="list-group-item-text">{{ vehicule.modele }}</p>
-          <p class="list-group-item-text">{{ vehicule.puissance }}</p>
-        </button>
-      </div>
-      <button class="btn btn-primary" (click)="onNewVehicule()">Nouveau vehicule</button>
+<div class="col-sm-8 col-sm-offset-2">
+    <h2>Mes vehicules</h2>
+    <div class="list-group">
+      <button
+        class="list-group-item"
+        *ngFor="let vehicule of vehicules; let i = index"
+        (click)="onViewVehicule(i)">
+        <h3 class="list-group-item-heading">
+          {{ vehicule.marque }}
+          <button class="btn btn-default pull-right" (click)="onDeleteVehicule(vehicule)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </h3>
+        <p class="list-group-item-text">{{ vehicule.modele }}</p>
+        <p class="list-group-item-text">{{ vehicule.puissance }}</p>
+      </button>
     </div>
   </div>
+
+
+
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2>Enregistrer une nouveau vehicule</h2>
+          <form [formGroup]="vehiculeForm" (ngSubmit)="onSaveVehicule()">
+              <div class="form-group">
+                <label for="marque">marque</label>
+                <input type="text" class='form-control' id="marque" formControlName="marque">
+              </div>
+              <div class="form-group">
+                <label for="modele">modele</label>
+                <input type="text" class='form-control' id="modele" formControlName="modele">
+              </div>
+              <div class="form-group">
+                <label for="puissance">puissance</label>
+                  <select class="form-control" id="puissance" formControlName="puissance" >
+                      <option value="3">3 et -</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7 et +</option>
+                  </select>
+              </div>
+              <button class="btn btn-success" [disabled]='vehiculeForm.invalid' type="submit">Enregistrer</button>
+          </form>
+      </div>
+    </div>
