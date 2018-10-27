@@ -1,13 +1,23 @@
-import { Injectable } from '@angular/core';
+// import { Injectable } from '@angular/core';
+// import { Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class TransitService {
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class TransitService {
   
-    constructor() { }
+//   dataTransit: any[];
+//   dataTransitSubject = new Subject <dataTransit[]>()
   
+//     constructor() { }
   
+//     emitDataTransit(){
+//       this.dataTransitSubject.next(this.dataTransit);
+//     }
+
+//     getDataTransit(){
+//           this.dataTransitSubject.subscribe(this.dataTransit())
+//     }
   
-  }
+  //}
   

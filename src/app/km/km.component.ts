@@ -28,7 +28,7 @@ export class KmComponent implements OnInit, OnDestroy {
         }
       );
       this.kmService.getKms();
-      this.kmService.emitkms();
+      this.kmService.emitKms();
     }
   
     initForm(){
