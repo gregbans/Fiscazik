@@ -29,6 +29,8 @@ export class HeaderComponent implements OnInit {
   // pour que l'utilisateur se deconnecte
   onSignOut (){
     this.authService.SignOutUser();
+    localStorage.removeItem("sauvegardeFrais" + localStorage.getItem('email'));
+    localStorage.removeItem("email");
   }
 
 

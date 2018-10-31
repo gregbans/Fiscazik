@@ -23,7 +23,7 @@ export class ListingService {
     "desc": "Frais vestimentaires et de coiffure, de représentation, de communications téléphoniques professionnelles, de formation et de fournitures diverses (partitions, pupitre...)",
     "array": 1,
     "idcollapse": 1,
-    "route": "revenu"
+    "route": "representation"
   },
   {
     "name": "3 - Frais de transport",
@@ -37,7 +37,7 @@ export class ListingService {
     "desc": "Deplacement entre un logement provisoire et le lieu de travail.",
     "array": 3,
     "idcollapse": 3,
-    "route": "listing"
+    "route": "autres_frais"
   },
   {
     "name": "5 - Frais de repas",
@@ -51,14 +51,14 @@ export class ListingService {
     "desc": "A preciser.",
     "array": 5,
     "idcollapse": 5,
-    "route":"listing"
+    "route":"repas_dep"
   },
   {
     "name": "7 - Frais de documentation",
     "desc": "A preciser.",
     "array": 6,
     "idcollapse": 6,
-    "route":"listing"
+    "route":"documentation"
   },
   {
     "name": "8 - Frais de local professionnel",
@@ -72,21 +72,21 @@ export class ListingService {
     "desc": "Frais de matériel, mobilier et fournitures autres que celles visées au 2 ci-dessus",
     "array":8,
     "idcollapse": 8,
-    "route": "listing"
+    "route": "materiel"
   },
   {
     "name": "10 - Cotisations professionnelles",
     "desc": "A preciser.",
     "array":9,
     "idcollapse": 9,
-    "route": "listing"
+    "route": "cotisation"
   },
   {
     "name": "11 - Autres Frais",
     "desc": "A preciser.",
     "array":10,
     "idcollapse": 10,
-    "route": "listing"
+    "route": "autres_frais"
   },  
       ]
   constructor() {}

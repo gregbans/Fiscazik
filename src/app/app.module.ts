@@ -17,10 +17,17 @@ import { HabitationComponent } from './habitation/habitation.component';
 import { TutoComponent } from './tuto/tuto.component';
 import { ArchiveComponent } from './archive/archive.component';
 import { HeaderComponent } from './header/header.component';
+import { RepasDeplacementComponent } from './repas-deplacement/repas-deplacement.component';
+import { DocumentationComponent } from './documentation/documentation.component';
+import { RepresentationComponent } from './representation/representation.component';
+import { MaterielComponent } from './materiel/materiel.component';
+import { CotisationComponent } from './cotisation/cotisation.component';
+import { AutresFraisComponent } from './autres-frais/autres-frais.component';
 
 import { ListingService } from './services/listing.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
+
 
 
 const appRoutes: Routes = [
@@ -34,6 +41,12 @@ const appRoutes: Routes = [
   {path: 'repas', canActivate:[AuthGuardService], component: RepasComponent},
   {path: 'habitation', canActivate:[AuthGuardService], component: HabitationComponent},
   {path: 'archive', canActivate:[AuthGuardService], component: ArchiveComponent},
+  {path: 'repas_dep', canActivate:[AuthGuardService], component: RepasDeplacementComponent},
+  {path: 'documentation', canActivate:[AuthGuardService], component: DocumentationComponent},
+  {path: 'representation', canActivate:[AuthGuardService], component: RepresentationComponent},
+  {path: 'materiel', canActivate:[AuthGuardService], component: MaterielComponent},
+  {path: 'cotisation', canActivate:[AuthGuardService], component: CotisationComponent},
+  {path: 'autres_frais', canActivate:[AuthGuardService], component: AutresFraisComponent},
   {path: '', redirectTo: 'listing', pathMatch: 'full'},
   {path: '**', redirectTo: 'listing'}
 ]
@@ -54,6 +67,12 @@ const appRoutes: Routes = [
     TutoComponent,
     ArchiveComponent,
     HeaderComponent,
+    RepasDeplacementComponent,
+    DocumentationComponent,
+    RepresentationComponent,
+    MaterielComponent,
+    CotisationComponent,
+    AutresFraisComponent,
   ],
   imports: [
     BrowserModule,

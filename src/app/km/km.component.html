@@ -3,7 +3,7 @@
         <h2 style="color:lightgrey">Selectionnez votre vehicule :</h2>
         <form [formGroup]="kmForm" (ngSubmit)="onSaveKm()">
           <div class="form-group" >
-              <label for="Km"></label>
+              <label for="km"></label>
                 <select class="form-control" id="km" formControlName="km" >
                     <option ngFor="let Vehicule from vehiculeForm" value="{{vehicule}}"> {{vehicule}}</option>
                 </select>
