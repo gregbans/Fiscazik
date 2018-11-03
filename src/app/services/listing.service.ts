@@ -1,5 +1,7 @@
 
 import { Injectable } from '@angular/core';
+import { Frais } from '../models/frais.model';
+import { TransitService } from '../services/transit.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +18,7 @@ export class ListingService {
     "desc": "Frais liés à l'instruement de musique. Achat, entretien et frais annexes, plus les interets d'emprunt",
     "array": 0,
     "idcollapse": 0,
-    "route": "revenu"
+    "route": "revenu",
   },
   {
     "name": "2 - Frais de représentation",

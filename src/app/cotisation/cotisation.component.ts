@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TransitService } from '../services/transit.service';
+import { Frais } from '../models/frais.model';
 
 @Component({
   selector: 'app-cotisation',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CotisationComponent implements OnInit {
 
-  constructor() { }
+  actuelFrais : Frais = new Frais();
+
+  constructor(private transitService: TransitService) { 
+    this.actuelFrais =transitService.getFrais();
+  }
+
+
 
   ngOnInit() {
   }

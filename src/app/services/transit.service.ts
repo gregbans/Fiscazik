@@ -22,13 +22,47 @@ setFrais(frais: Frais){
     constructor() { 
       if(localStorage.getItem("email")!= undefined && localStorage.getItem("sauvegardeFrais"+ localStorage.getItem("email"))!= undefined){
         this.fraisActuel=JSON.parse(localStorage.getItem("sauvegardeFrais" + localStorage.getItem("email")));
-        if(this.fraisActuel=== undefined){
+        if(this.fraisActuel === undefined){
           this.fraisActuel=new Frais();
+          // this.fraisActuel.montantSuperTotal = 0;
+          this.fraisActuel.montantArtisteMusiciens.montantRemunerationNet = 0;
+          this.fraisActuel.montantArtisteMusiciens.montantAllocationChomage = 0;
+          this.fraisActuel.montantFraisPro = 0;
+          // this.fraisActuel.montantFraisTransport.ChoixVehicule = "Veuillez enregistrer un vehicule";
+          // this.fraisActuel.montantFraisTransport.nbKm5_20 = 0;
+          // this.fraisActuel.montantFraisTransport.nbKmInf5 = 0;
+          // this.fraisActuel.montantFraisTransport.nbKmSup20 = 0;
+          // this.fraisActuel.montantRepas.montantTotalRepas = 0;
+          // this.fraisActuel.montantRepas.nombreRepas = 0;
+          // this.fraisActuel.montantRepasDep.montantTotalDep = 0;
+          // this.fraisActuel.montantRepasDep.nombreRepasDep = 0;
           this.fraisActuel.montantFraisTotalDocu = 0;
+          // this.fraisActuel.montantSurfacePro.SurfaceTotale = 0;
+          // this.fraisActuel.montantSurfacePro.SurfacePro = 0;
+          this.fraisActuel.montantFraisMateriel = 0;
+          this.fraisActuel.MontantCotisationPro = 0;
+          this.fraisActuel.MontantAutresFrais = 0;
         }
       }else{
         this.fraisActuel=new Frais();
-        this.fraisActuel.montantFraisTotalDocu = 0;
+        // this.fraisActuel.montantSuperTotal = 0;
+        // this.fraisActuel.montantArtisteMusiciens.montantRemunerationNet = 0;
+        // this.fraisActuel.montantArtisteMusiciens.montantAllocationChomage = 0;
+          this.fraisActuel.montantFraisPro = 0;
+        //   this.fraisActuel.montantFraisTransport.ChoixVehicule = "Veuillez enregistrer un vehicule";
+        //   this.fraisActuel.montantFraisTransport.nbKm5_20 = 0;
+        //   this.fraisActuel.montantFraisTransport.nbKmInf5 = 0;
+        //   this.fraisActuel.montantFraisTransport.nbKmSup20 = 0;
+        //   this.fraisActuel.montantRepas.montantTotalRepas = 0;
+        //   this.fraisActuel.montantRepas.nombreRepas = 0;
+        //   this.fraisActuel.montantRepasDep.montantTotalDep = 0;
+        //   this.fraisActuel.montantRepasDep.nombreRepasDep = 0;
+          this.fraisActuel.montantFraisTotalDocu = 0;
+        //   this.fraisActuel.montantSurfacePro.SurfaceTotale = 0;
+        //   this.fraisActuel.montantSurfacePro.SurfacePro = 0;
+          this.fraisActuel.montantFraisMateriel = 0;
+          this.fraisActuel.MontantCotisationPro = 0;
+          this.fraisActuel.MontantAutresFrais = 0;
       }
     }
   

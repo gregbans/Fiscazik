@@ -1,18 +1,18 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <h2>Calcul des repas hors habitation principale :</h2>
+    <h2>Calcul des frais de repas :</h2>
       <form>
           <div class="form-group">
-            <label for="Reaps_total">Montant Total :</label>
-            <input type="text" class='form-control' id="Reaps_total" >
+            <label for="Reas_total">Montant Total :</label>
+            <input [(ngModel)]="actuelFrais.montantTotalRepas" name="montantTotalRepas" type="text" class='form-control' id="Reaps_total" >
           </div>
           <div class="form-group">
             <label for="nb_repas">Nombre de repas :</label>
-            <input type="text" class='form-control' id="nb_repas" >
+            <input [(ngModel)]="actuelFrais.nombreRepas" name="montantTotalRepas"type="text" class='form-control' id="nb_repas" >
           </div>
             <div class="form-group">
               <h2 >Total défiscalisable :</h2>
-              <div  style="background-color: blue,">???</div>
+              <div  style="background-color: blue,">{{totalFraisDefiscal}}</div>
             </div>
             
             <button class="btn btn-success" routerLink="/listing" type="submit">Enregistrer</button>

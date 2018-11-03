@@ -15,8 +15,6 @@ export class DocumentationComponent implements OnInit {
 
   constructor(private transitService: TransitService) {
 this.actuelFrais=transitService.getFrais();
-//this.actuelFrais.montantRepas.montantTotal;
-// this.actelFrais.montantTotal;
   }
 
   onValidate(){
