@@ -11,13 +11,13 @@ export class MontantFraisTransports{
 }
 
 export class MontantRepas {
-    montantTotalRepasDep: number;
-        nombreRepasDep: number
+    montantTotalRepas: number;
+        nombreRepas: number
 }
 
 export class MontantRepasDep {
-    montantTotalRepas: number;
-    nombreRepas: number
+    montantTotalRepasDep: number;
+    nombreRepasDep: number
 }
 
 export class MontantSurfacePro {

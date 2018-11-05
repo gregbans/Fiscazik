@@ -21,7 +21,7 @@ export class RevenuComponent implements OnInit {
 
   constructor(private transitService: TransitService,
               public listingService: ListingService) {
-    console.log(this.actuelFrais);
+
     this.actuelFrais=transitService.getFrais();
   }
 
