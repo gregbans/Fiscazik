@@ -22,7 +22,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.dataStock = this.listingService.getListing();
-    console.log(this.dataStock);
   }
 
 }
