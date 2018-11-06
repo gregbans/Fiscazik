@@ -12,18 +12,17 @@ import { TransitService } from '../services/transit.service';
 export class RepasComponent implements OnInit {
 
 actuelFrais : Frais = new Frais();
-// totalFraisDefiscal : number;
-// a= this.actuelFrais.montantRepas.montantTotalRepas;
-// b= this.actuelFrais.montantRepas.nombreRepas;
+leresultat = 0;
+repasInt = 0;
 
   constructor(private transitService : TransitService) {
     this.actuelFrais=transitService.getFrais();
   }
 
-  // calcul(){
-  //   this.totalFraisDefiscal = this.a + this.b
-  //   return this.totalFraisDefiscal;
-  // }
+  calculer() {
+    this.repasInt = Number(this.actuelFrais.montantRepas.nombreRepas) * 4.75;
+    this.leresultat = Number(this.actuelFrais.montantRepas.montantTotalRepas) - (this.repasInt);
+  }
 
   onValidate(){
     this.transitService.setFrais(this.actuelFrais);

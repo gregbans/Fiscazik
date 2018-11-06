@@ -17,19 +17,19 @@
               <form [formGroup]="kmForm" (ngSubmit)="onSaveKm()">
                   <div class="form-group">
                     <label style="color: whitesmoke" for="trajet5000">trajets inferieurs à 5000 kms :</label>
-                    <input type="text" class='form-control' id="trajet5000" formControlName="trajet5000">
+                    <input (change)="calculer()" [(ngModel)]="actuelFrais.montantFraisTransport.nbKmInf5"  name="nbKmInf5" type="text" class='form-control' id="trajet5000" formControlName="trajet5000">
                   </div>
                   <div class="form-group">
                     <label style="color: whitesmoke" for="trajet5_20">trajets entre 5 000 et 20 000 kms :</label>
-                    <input type="text" class='form-control' id="trajet5_20" formControlName="trajet5_20">
+                    <input (change)="calculer()" [(ngModel)]="actuelFrais.montantFraisTransport.nbKm5_20"  name="nbKm5_20" type="text" class='form-control' id="trajet5_20" formControlName="trajet5_20">
                   </div>
                   <div class="form-group">
-                      <label style="color: whitesmoke" for="trajet20">trajets superieurs à 20 000 kms :</label>
-                      <input type="text" class='form-control' id="trajet20" formControlName="trajet20">
+                      <label style="color: whitesmoke" for="trajet20">trajets superieurs à 20 000 kms :</label>nbKmSup20
+                      <input (change)="calculer()" [(ngModel)]="actuelFrais.montantFraisTransport.nbKmSup20"  name="nbKmSup20"type="text" class='form-control' id="trajet20" formControlName="trajet20">
                     </div>
                     <div class="form-group">
                       <h2 style="color: whitesmoke" class="col-sm-8 col-sm-offset-2">Total défiscalisable : 
-                        <div  style="background-color: blue,">???</div></h2>
+                        <div  style="background-color: blue,">{{leresultat}}</div></h2>
                       </div>
                   <button class="btn btn-success" [disabled]='kmForm.invalid' routerLink='/listing' type="submit">Enregistrer</button>
               </form>

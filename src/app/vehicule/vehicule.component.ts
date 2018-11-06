@@ -65,6 +65,7 @@ vehiculeForm: FormGroup;
     const puissance = this.vehiculeForm.get('puissance').value;
     const newVehicule = new Vehicule(marque, modele, puissance );
     this.vehiculeService.createNewVehicule(newVehicule);
+    debugger;
     this.router.navigate(['/vehicule']);
     }
 

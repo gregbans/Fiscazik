@@ -14,9 +14,10 @@ export class RevenuComponent implements OnInit {
 
 
   // declaration puis initialisation d'un tableau de boolean pour gerer l'ouverture des pop-up.
-  isCollapsed: boolean[];
-  dataStock: any[]= []
+  // isCollapsed: boolean[];
+  // dataStock: any[]= []
 
+  leresultat = 0;
   actuelFrais : Frais = new Frais();
 
   constructor(private transitService: TransitService,
@@ -29,10 +30,15 @@ export class RevenuComponent implements OnInit {
     this.transitService.setFrais(this.actuelFrais);
   
   }
+  
+  
+  calculer() {
+    this.leresultat = Number(this.actuelFrais.montantArtisteMusiciens.montantRemunerationNet) + Number(this.actuelFrais.montantArtisteMusiciens.montantAllocationChomage);
+  }
 
 
   ngOnInit() {
-    this.dataStock = this.listingService.getListing();
+    // this.dataStock = this.listingService.getListing();
   }
 
 }

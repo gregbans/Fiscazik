@@ -63,5 +63,4 @@ removeVehicule(vehicule:Vehicule){
   this.emitVehicules();
 }
 
-
 }

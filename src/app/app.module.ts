@@ -27,6 +27,7 @@ import { AutresFraisComponent } from './autres-frais/autres-frais.component';
 import { ListingService } from './services/listing.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
+import { BaremesService } from './services/baremes.service';
 
 
 
@@ -86,6 +87,8 @@ const appRoutes: Routes = [
     AuthGuardService,
     AuthService,
     ListingService,
+    BaremesService
+    
   ],
   bootstrap: [AppComponent]
 })
