@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Frais } from '../models/frais.model';
 import { TransitService } from '../services/transit.service';
-
+import { BaremesService } from '../services/baremes.service';
 
 
 @Component({
@@ -14,13 +14,20 @@ export class RepasComponent implements OnInit {
 actuelFrais : Frais = new Frais();
 leresultat = 0;
 repasInt = 0;
+actuelTaux = 0;
 
-  constructor(private transitService : TransitService) {
+  constructor(private transitService : TransitService,private bs: BaremesService) {
     this.actuelFrais=transitService.getFrais();
+    this.bs.getBareme(4).subscribe(
+      (res: any) => {
+        this.actuelTaux= Number(res.valeur_bareme);
+         console.log('valeur', res);
+      }
+   )
   }
 
   calculer() {
-    this.repasInt = Number(this.actuelFrais.montantRepas.nombreRepas) * 4.75;
+    this.repasInt = Number(this.actuelFrais.montantRepas.nombreRepas) * this.actuelTaux;
     this.leresultat = Number(this.actuelFrais.montantRepas.montantTotalRepas) - (this.repasInt);
   }
 

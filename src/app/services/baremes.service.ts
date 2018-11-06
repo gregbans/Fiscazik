@@ -13,6 +13,9 @@ export class BaremesService {
   getBaremes(): Observable<any[]> {
     return this.http.get<any[]>('http://bansproduction-com.mon.world/baremes');
   }
+  getBareme(idbareme:number): Observable<any[]> {
+    return this.http.get<any[]>('http://bansproduction-com.mon.world/bareme/'+idbareme+'');
+  }
 
   setBareme(valeurbareme : number): Observable<any[]> {
     return this.http.get<any[]>('http://bansproduction-com.mon.world/setbareme/'+valeurbareme+'');
