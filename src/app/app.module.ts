@@ -36,6 +36,7 @@ const appRoutes: Routes = [
   {path: 'auth/signin', component: SigninComponent},
   {path: 'listing', canActivate:[AuthGuardService], component: ListComponent },
   {path: 'policy', canActivate:[AuthGuardService], component: PolicyComponent},
+  {path: 'tuto', canActivate:[AuthGuardService], component: TutoComponent},
   {path: 'revenu', canActivate:[AuthGuardService], component: RevenuComponent},
   {path: 'vehicule', canActivate:[AuthGuardService], component: VehiculeComponent},
   {path: 'Km', canActivate:[AuthGuardService], component: KmComponent},
