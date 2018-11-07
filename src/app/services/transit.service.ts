@@ -51,6 +51,7 @@ setFrais(frais: Frais){
         this.fraisActuel.montantSurfacePro = new MontantSurfacePro();
         this.fraisActuel.montantSurfacePro.SurfaceTotale = 0;
         this.fraisActuel.montantSurfacePro.SurfacePro = 0;
+        this.fraisActuel.montantSurfacePro.loyer = 0;
 
         this.fraisActuel.montantFraisMateriel = 0;
         this.fraisActuel.MontantCotisationPro = 0;

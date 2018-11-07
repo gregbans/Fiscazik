@@ -24,6 +24,7 @@ export class MontantSurfacePro {
     adresse : string;
     CP: number;
     ville: string;
+    loyer: number;
     SurfaceTotale: number;
     SurfacePro: number;
 }

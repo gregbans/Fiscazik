@@ -1,3 +1,16 @@
-<p>
-  archive works!
-</p>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <h2 style="color:lightgrey">Selectionnez une declaration :</h2>
+        <form>
+        <div class="form-group" >
+            <label></label>
+                <select class="form-control" id="diagnostic" formControlName="diagnostics" >
+                    <option value="{{diagnostics}}"> {{diagnostics}}</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+<p ngFor="let diagnostic from diagnostics">{{diagnostics}} </p>
+
+</div>

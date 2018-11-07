@@ -18,12 +18,11 @@ actuelTaux = 0;
 
   constructor(private transitService : TransitService,private bs: BaremesService) {
     this.actuelFrais=transitService.getFrais();
-    this.bs.getBareme(4).subscribe(
+    this.bs.getBareme(0).subscribe(
       (res: any) => {
         this.actuelTaux= Number(res.valeur_bareme);
-         console.log('valeur', res);
       }
-   )
+  )
   }
 
   calculer() {

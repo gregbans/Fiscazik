@@ -4,25 +4,30 @@
       <form>
           <div class="form-group">
             <label for="adresse">adresse :</label>
-            <input [(ngModel)]="actuelFrais.adresse"  name="adresse" type="text" class='form-control' id="adresse" >
+            <input [(ngModel)]="actuelFrais.montantSurfacePro.adresse"  name="adresse" type="text" class='form-control' id="adresse" >
           </div>
           <div class="form-group">
             <label for="code_postal">Code postal :</label>
-            <input [(ngModel)]="actuelFrais.CP"  name="CP" style="width: 20%" type="text" class='form-control' id="code_postal" >
+            <input [(ngModel)]="actuelFrais.montantSurfacePro.CP"  name="CP" style="width: 20%" type="text" class='form-control' id="code_postal" >
           </div>
           <div class="form-group">
             <label for="ville">Ville :</label>
-            <input [(ngModel)]="actuelFrais.ville"  name="ville" type="text" class='form-control' id="ville" >
+            <input [(ngModel)]="actuelFrais.montantSurfacePro.ville"  name="ville" type="text" class='form-control' id="ville" >
           </div>
           <div class="form-group">
-            <label for="csurface">Surface en m2 :</label>
-            <input [(ngModel)]="actuelFrais.SurfaceTotale"  name="SurfaceTotale" style="width: 20%" type="text" class='form-control' id="surface" >
+            <label for="loyer">loyer (charges comprises) :</label>
+            <input (change)="calculer()" [(ngModel)]="actuelFrais.montantSurfacePro.loyer"  name="loyer" style="width: 20%" type="text" class='form-control' id="surface" >
+          </div>
+          <div class="form-group">
+            <label for="surface">Surface en m2 :</label>
+            <input (change)="calculer()" [(ngModel)]="actuelFrais.montantSurfacePro.SurfaceTotale"  name="SurfaceTotale" style="width: 20%" type="text" class='form-control' id="surface" >
           </div>
       </form>
           <h2>Surface consacré à votre activitée professionnelle :</h2>
-                  <input [(ngModel)]="actuelFrais.SurfacePro"  name="SurfacePro" style="width: 20%"type="text" class='form-control' id="surfacepro" >
+          <label for="surfacePro">Surface pro :</label>
+                  <input (change)="calculer()" [(ngModel)]="actuelFrais.montantSurfacePro.SurfacePro"  name="SurfacePro" style="width: 20%"type="text" class='form-control' id="surfacepro" >
               <h2 >Total défiscalisable :</h2>
-              <h2 style="color: blue; ">???</h2>
+              <h2 style="color: azure">{{leresultat}}</h2>
               <button class="btn btn-success" routerLink="/listing" type="submit">Enregistrer</button>
   </div>
 </div>
