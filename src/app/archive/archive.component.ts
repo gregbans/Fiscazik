@@ -13,6 +13,7 @@ export class ArchiveComponent implements OnInit {
   constructor(private ds: DiagnosticsService) {
     this.ds.getDiagnostic("gregory.bannier@gmail.com").subscribe(
       (res: any) => {
+        alert('AQUI' + res);
         console.log("archive.component.ts res", res)
         this.diagnosticEmail= (res.email_diagnostic);
       }, err =>(console.log("archive.component.ts erreur", err))
