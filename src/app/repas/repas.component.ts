@@ -12,12 +12,15 @@ import { BaremesService } from '../services/baremes.service';
 export class RepasComponent implements OnInit {
 
 actuelFrais : Frais = new Frais();
+
 leresultat = 0;
 repasInt = 0;
+
 actuelTaux = 0;
 
   constructor(private transitService : TransitService,private bs: BaremesService) {
     this.actuelFrais=transitService.getFrais();
+    
     this.bs.getBareme(0).subscribe(
       (res: any) => {
         this.actuelTaux= Number(res.valeur_bareme);
