@@ -14,8 +14,12 @@ export class DiagnosticsService {
     return this.http.get<any[]>(' http://bansproduction-com.mon.world/diagnostics');
   }
 
-  setBareme(valeurdiagnostics : number, valeuremail : string): Observable<any[]> {
-    return this.http.get<any[]>(' http://bansproduction-com.mon.world/setdiagnostic/'+ valeuremail +valeurdiagnostics+'');
+  getDiagnostic(iddiagnostic:number): Observable<any[]> {
+    return this.http.get<any[]>('http://bansproduction-com.mon.world/diagnostic/'+iddiagnostic+'');
+  }
+
+  setDiagnostic(valeurdiagnostic : number, valeuremail : string): Observable<any[]> {
+    return this.http.get<any[]>(' http://bansproduction-com.mon.world/setdiagnostic/'+ valeuremail + valeurdiagnostic+'');
   }
 
 
