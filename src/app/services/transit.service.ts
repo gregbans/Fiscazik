@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Frais, ArtisteMusiciens, MontantFraisTransports, MontantRepas, MontantRepasDep, MontantSurfacePro } from '../models/frais.model';
+import { Frais, ArtisteMusiciens, MontantFraisTransports, MontantRepas, MontantRepasDep, MontantSurfacePro, MontantFraisRepresent, MontantFraisTotalDocu, MontantFraisMateriel, MontantCotisationPro, MontantAutresFrais, MontantFraisAutresFraisTrans } from '../models/frais.model';
 
 
 @Injectable({
@@ -25,37 +25,59 @@ setFrais(frais: Frais){
     }
     if(this.fraisActuel === undefined){
       this.fraisActuel=new Frais();
-      this.fraisActuel.montantSuperTotal = 0;
+      // this.fraisActuel.montantSuperTotal = 0;
 
       this.fraisActuel.montantArtisteMusiciens= new ArtisteMusiciens();
       this.fraisActuel.montantArtisteMusiciens.montantRemunerationNet = 0;
       this.fraisActuel.montantArtisteMusiciens.montantAllocationChomage = 0;
-      this.fraisActuel.montantFraisPro = 0;
+      this.fraisActuel.montantArtisteMusiciens.total = 0;
+
+      this.fraisActuel.montantFraisRepresent= new MontantFraisRepresent();
+      this.fraisActuel.montantFraisRepresent.montantFraisRepresent = 0;
+      this.fraisActuel.montantFraisRepresent.total = 0
 
       this.fraisActuel.montantFraisTransport = new MontantFraisTransports();
       this.fraisActuel.montantFraisTransport.ChoixVehicule = "Veuillez enregistrer un vehicule";
       this.fraisActuel.montantFraisTransport.nbKm5_20 = 0;
       this.fraisActuel.montantFraisTransport.nbKmInf5 = 0;
       this.fraisActuel.montantFraisTransport.nbKmSup20 = 0;
+      this.fraisActuel.montantFraisTransport.total = 0;
+
+      this.fraisActuel.montantautresFraisTrans= new MontantFraisAutresFraisTrans();
+      this.fraisActuel.montantFraisRepresent.montantFraisRepresent = 0;
+      this.fraisActuel.montantFraisRepresent.total = 0
 
       this.fraisActuel.montantRepas = new MontantRepas();
       this.fraisActuel.montantRepas.montantTotalRepas = 0;
       this.fraisActuel.montantRepas.nombreRepas = 0;
+      this.fraisActuel.montantRepas.total = 0;
 
       this.fraisActuel.montantRepasDep = new MontantRepasDep();
       this.fraisActuel.montantRepasDep.montantTotalRepasDep = 0;
       this.fraisActuel.montantRepasDep.nombreRepasDep = 0;
+      this.fraisActuel.montantRepasDep.total = 0;
 
-      this.fraisActuel.montantFraisTotalDocu = 0;
-        
+      this.fraisActuel.montantFraisTotalDocu = new MontantFraisTotalDocu();
+      this.fraisActuel.montantFraisTotalDocu.montantFraisTotalDocu = 0;
+      this.fraisActuel.montantFraisTotalDocu.total =0
+
       this.fraisActuel.montantSurfacePro = new MontantSurfacePro();
       this.fraisActuel.montantSurfacePro.SurfaceTotale = 0;
       this.fraisActuel.montantSurfacePro.SurfacePro = 0;
       this.fraisActuel.montantSurfacePro.loyer = 0;
+      this.fraisActuel.montantSurfacePro.total = 0;
 
-      this.fraisActuel.montantFraisMateriel = 0;
-      this.fraisActuel.MontantCotisationPro = 0;
-      this.fraisActuel.MontantAutresFrais = 0;
+      this.fraisActuel.montantFraisMateriel = new MontantFraisMateriel();
+      this.fraisActuel.montantFraisMateriel.montantFraisMateriel= 0;
+      this.fraisActuel.montantFraisMateriel.total = 0;
+
+      this.fraisActuel.montantCotisationPro = new MontantCotisationPro();
+      this.fraisActuel.montantCotisationPro.montantCotisationPro= 0;
+      this.fraisActuel.montantCotisationPro.total=0;
+
+      this.fraisActuel.montantAutresFrais = new MontantAutresFrais();
+      this.fraisActuel.montantAutresFrais.montantAutresFrais=0;
+      this.fraisActuel.montantAutresFrais.total=0;
     }
   }
   

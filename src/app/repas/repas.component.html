@@ -1,21 +1,29 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <h2>Calcul des frais de repas :</h2>
-      <form>
+    <h3>Calcul des frais de repas :</h3>
+    <br>
+      <form class="form-horizontal">
+
           <div class="form-group">
-            <label for="Reas_total">Montant Total :</label>
-            <input (change)="calculer()" [(ngModel)]="actuelFrais.montantRepas.montantTotalRepas" name="montantTotalRepas" type="text" class='form-control' id="Reaps_total" >
+            <label for="Reas_total" class="col-xs-4 control-label">Montant Total :</label>
+            <div class="col-xs-8">
+              <input (change)="calculer()" [(ngModel)]="actuelFrais.montantRepas.montantTotalRepas" name="montantTotalRepas" type="text" class='form-control' id="Reaps_total" >
+            </div>          
           </div>
+
           <div class="form-group">
-            <label for="nb_repas">Nombre de repas :</label>
-            <input (change)="calculer()" [(ngModel)]="actuelFrais.montantRepas.nombreRepas" name="montantTotalRepas" type="text" class='form-control' id="nb_repas" >
-          </div>
-            <div class="form-group">
-              <h2 >Total défiscalisable :</h2>
-              <h1  style="color: azure">{{leresultat}}</h1>
+            <label for="nb_repas" class="col-xs-4 control-label">Nombre de repas :</label>
+            <div class="col-xs-8">
+              <input (change)="calculer()" [(ngModel)]="actuelFrais.montantRepas.nombreRepas" name="montantTotalRepas" type="text" class='form-control' id="nb_repas" >
             </div>
-            
-            <button class="btn btn-success" routerLink="/listing" type="submit">Enregistrer</button>
+          </div>
+
+          <div class="form-group">
+            <h3 class="col-xs-12" [(ngModel)]="actuelFrais.montantRepas.Total" name="montantDefRepas">Total défiscalisable : <span style="color: azure">{{leresultat}}</span></h3>
+          </div>
+          <div class="" >
+            <button class="btn btn-success pull-right" routerLink="/listing" type="submit">Enregistrer</button>
+          </div> 
           </form>
       </div>
     </div>

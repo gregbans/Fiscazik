@@ -8,10 +8,10 @@ import { DiagnosticsService } from '../services/diagnostics.service';
 })
 export class ArchiveComponent implements OnInit {
 
-  diagnosticEmail= "";
+  diagnostic: any;
 
   constructor(private ds: DiagnosticsService) {
- 
+
   }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ export class ArchiveComponent implements OnInit {
       (res: any) => {
       
         console.log("archive.component.ts res d", res)
-        this.diagnosticEmail= res.email_diagnostic;
+        this.diagnostic= res[0];
       }, err =>(console.log("archive.component.ts erreur", err))
   )
   }
