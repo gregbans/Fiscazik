@@ -3,6 +3,7 @@ import { ListingService } from '../services/listing.service';
 import { BaremesService } from '../services/baremes.service';
 import {Observable} from 'rxjs';
 import { Frais } from '../models/frais.model';
+import { TransitService } from '../services/transit.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -12,23 +13,26 @@ export class ListComponent implements OnInit {
 
 
   fraisActuel: Frais; // 
+
   // creation d'un tablau pour stocker les données
   dataStock: any[]= [];
 
   taux: any[];
 
   // declaration puis initialisation d'un tableau de boolean pour gerer l'ouverture des pop-up.
-  isCollapsed: boolean[] = new Array(false, false, false, false,false, false,false, false,false, false,false)
+  //isCollapsed: boolean[] = new Array(false, false, false, false,false, false,false, false,false, false,false)
 
-  constructor(public listingService: ListingService,private bs: BaremesService  ) {
+  constructor(public listingService: ListingService,private bs: BaremesService, private transitService : TransitService  ) {
 
     // recuperation du modele de donné
+  
+
     //init fraisActuel
   }
 
   ngOnInit() {
 
-    this.bs.setBareme(23).subscribe(
+    this.bs.setBareme(0).subscribe(
       (res: any) => {
         this.bs.getBaremes().subscribe(
           (res: any) => {
@@ -41,6 +45,7 @@ export class ListComponent implements OnInit {
 
     this.dataStock = this.listingService.getListing();
     // injecter les valeurs de fraisActuel dans datastock
+    this.fraisActuel = this.transitService.getFrais();
   }
 
 
