@@ -16,12 +16,12 @@
 
       <form>
           <div class="form-group">
-            <label for="autres_frais">Autres frais :</label>
+            <label style="color:azure" for="autres_frais">Autres frais :</label>
             <input [(ngModel)]="actuelFrais.MontantAutresFrais"  name="montantMontantAutresFrais"style="width: 20%" type="text" class='form-control' id="autres_frais" >
           </div>
             <div class="form-group">
-                <h2 >Total défiscalisable : </h2>
-                <h2  style="color: blue">{{actuelFrais.MontantAutresFrais}}</h2>
+                <h2 style="color:azure" >Total défiscalisable : </h2>
+                <h2  style="color:azure"></h2>
             </div>
             <button class="btn btn-success" routerLink="/listing" type="submit">Enregistrer</button>
         </form>

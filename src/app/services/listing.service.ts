@@ -18,6 +18,7 @@ export class ListingService {
     "idcollapse": 0,
     "route": "revenu",
     resultat : 0,
+    type : 1,
   },
   {
     "name": "2 - Frais de représentation",
@@ -26,6 +27,7 @@ export class ListingService {
     "idcollapse": 1,
     "route": "representation",
     resultat : 0,
+    type : 2,
   },
   {
     "name": "3 - Frais de transport",
@@ -34,14 +36,16 @@ export class ListingService {
     "idcollapse": 2,
     "route": "Km",
     resultat : 0,
+    type : 3,
   },
   {
     "name": "4 - Autres frais de transport",
     "desc": "Deplacement entre un logement provisoire et le lieu de travail.",
     "array": 3,
     "idcollapse": 3,
-    "route": "autres_frais",
+    "route": "autres_frais_transport",
     resultat : 0,
+    type : 4,
   },
   {
     "name": "5 - Frais de repas",
@@ -50,6 +54,7 @@ export class ListingService {
     "idcollapse": 4,
     "route": "repas",
     resultat : 0,
+    type : 5,
   },
   {
     "name": "6 - Frais de repas en déplacement",
@@ -58,6 +63,7 @@ export class ListingService {
     "idcollapse": 5,
     "route":"repas_dep",
     resultat : 0,
+    type : 6,
   },
   {
     "name": "7 - Frais de documentation",
@@ -66,6 +72,7 @@ export class ListingService {
     "idcollapse": 6,
     "route":"documentation",
     resultat : 0,
+    type : 7,
   },
   {
     "name": "8 - Frais de local professionnel",
@@ -74,6 +81,7 @@ export class ListingService {
     "idcollapse": 7,
     "route": "habitation",
     resultat : 0,
+    type : 8,
   },
   {
     "name": "9 - Frais de Materiel",
@@ -82,6 +90,7 @@ export class ListingService {
     "idcollapse": 8,
     "route": "materiel",
     resultat : 0,
+    type : 9,
   },
   {
     "name": "10 - Cotisations professionnelles",
@@ -90,6 +99,7 @@ export class ListingService {
     "idcollapse": 9,
     "route": "cotisation",
     resultat : 0,
+    type : 10,
   },
   {
     "name": "11 - Autres Frais",
@@ -98,6 +108,7 @@ export class ListingService {
     "idcollapse": 10,
     "route": "autres_frais",
     resultat : 0,
+    type : 11,
   },  
       ]
   constructor() {}

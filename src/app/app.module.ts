@@ -32,6 +32,7 @@ import { DiagnosticsService } from './services/diagnostics.service';
 import { KmService } from './services/km.service';
 import { TransitService } from './services/transit.service';
 import { VehiculeService } from './services/vehicule.service';
+import { AutresFraisTransportComponent } from './autres-frais-transport/autres-frais-transport.component';
 
 
 
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
   {path: 'revenu', canActivate:[AuthGuardService], component: RevenuComponent},
   {path: 'vehicule', canActivate:[AuthGuardService], component: VehiculeComponent},
   {path: 'Km', canActivate:[AuthGuardService], component: KmComponent},
+  {path: 'autres_frais_transport', canActivate:[AuthGuardService], component: AutresFraisTransportComponent},
   {path: 'repas', canActivate:[AuthGuardService], component: RepasComponent},
   {path: 'habitation', canActivate:[AuthGuardService], component: HabitationComponent},
   {path: 'archive', canActivate:[AuthGuardService], component: ArchiveComponent},
@@ -79,6 +81,7 @@ const appRoutes: Routes = [
     MaterielComponent,
     CotisationComponent,
     AutresFraisComponent,
+    AutresFraisTransportComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,7 @@ export class MontantFraisTransports{
     total: number;
 }
 
-export class MontantFraisAutresFraisTrans {
+export class MontantAutresFraisTrans {
     montantAutresFraisTrans: number;
     total: number;
 }
@@ -77,7 +77,7 @@ export class Frais {
 
     montantFraisTransport : MontantFraisTransports;
 
-    montantautresFraisTrans : MontantFraisAutresFraisTrans;
+    montantautresFraisTrans : MontantAutresFraisTrans;
 
     montantRepas : MontantRepas;
 
