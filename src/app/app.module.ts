@@ -28,6 +28,10 @@ import { ListingService } from './services/listing.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { BaremesService } from './services/baremes.service';
+import { DiagnosticsService } from './services/diagnostics.service';
+import { KmService } from './services/km.service';
+import { TransitService } from './services/transit.service';
+import { VehiculeService } from './services/vehicule.service';
 
 
 
@@ -84,11 +88,15 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
 
   ],
-  providers: [
+  providers: [,
     AuthGuardService,
     AuthService,
     ListingService,
-    BaremesService
+    BaremesService,
+    DiagnosticsService,
+    KmService,
+    TransitService,
+    VehiculeService,
     
   ],
   bootstrap: [AppComponent]

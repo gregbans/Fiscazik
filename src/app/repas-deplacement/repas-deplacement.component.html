@@ -1,17 +1,30 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <h2>Calcul des frais de repas en deplacement :</h2>
+    <h2 style="color:azure" >Calcul des frais de repas en deplacement :
+      <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#footwear" aria-expanded="false" aria-controls="footwear">
+        <span class="glyphicon glyphicon-info-sign"></span>
+      </button>
+    </h2> 
+
+
+    <!-- Boutton description Collapse -->
+      <div>
+        <div class="collapse" id="footwear">
+          <p style="color:azure">Aucune information disponibles pour le moment.</p>
+        </div>
+      </div>
+
       <form>
           <div class="form-group">
-            <label for="Reaps_total_dep">Montant Total :</label>
+            <label style="color:azure" for="Reaps_total_dep">Montant Total :</label>
             <input [(ngModel)]="actuelFrais.montantRepasDep.montantTotalDep"  name="montantTotalFraisdocu" type="text" class='form-control' id="Reaps_total_dep" >
           </div>
           <div class="form-group">
-            <label for="nb_repas_dep">Nombre de repas :</label>
+            <label style="color:azure" for="nb_repas_dep">Nombre de repas :</label>
             <input [(ngModel)]="actuelFrais.montantRepasDep.nombreRepasDep"  name="montantTotalFraisdocu" type="text" class='form-control' id="nb_repas_dep" >
           </div>
             <div class="form-group">
-              <h2 >Total défiscalisable :</h2>
+              <h2 style="color:azure">Total défiscalisable :</h2>
               <div  style="color: azure">???</div>
             </div>
             

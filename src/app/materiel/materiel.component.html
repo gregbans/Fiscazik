@@ -1,14 +1,26 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <h2>Veuillez remplir les champs suivants :</h2>
+    <h2 style="color:azure" >Veuillez remplir les champs suivants :
+      <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#footwear" aria-expanded="false" aria-controls="footwear">
+        <span class="glyphicon glyphicon-info-sign"></span>
+      </button>
+    </h2> 
+
+    <!-- Boutton description Collapse -->
+      <div>
+        <div class="collapse" id="footwear">
+          <p style="color:azure">Frais de matériel, mobilier et fournitures autres que celles visées au 2 ci-dessus.</p>
+        </div>
+      </div>
+
       <form>
           <div class="form-group">
-            <label for="materiel">Montant total de vos frais de materiel :</label>
-            <input [(ngModel)]="actuelFrais.montantFraisMateriel"  name="montantFraisMateriel" style="width: 20%" type="text" class='form-control' id="materiel" >
+            <label style="color:azure" for="materiel">Montant total de vos frais de materiel :</label>
+            <input [(ngModel)]="actuelFrais.montantFraisMateriel.montantFraisMateriel"  name="montantFraisMateriel" style="width: 20%" type="text" class='form-control' id="materiel" >
           </div>
             <div class="form-group">
-                <h2 >Total défiscalisable : </h2>
-                <h2  style="color: azure">{{actuelFrais.montantFraisMateriel}}</h2>
+                <h2 style="color:azure" >Total défiscalisable : </h2>
+                <h2  style="color: azure"></h2>
             </div>
             <button class="btn btn-success" routerLink="/listing" type="submit">Enregistrer</button>
         </form>

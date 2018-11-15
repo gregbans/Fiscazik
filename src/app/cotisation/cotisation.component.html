@@ -1,13 +1,25 @@
 <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
-    <h2>Veuillez remplir les champs suivants :</h2>
+    <h2 style="color:azure" >Veuillez remplir les champs suivants :
+      <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#footwear" aria-expanded="false" aria-controls="footwear">
+        <span class="glyphicon glyphicon-info-sign"></span>
+      </button>
+    </h2> 
+
+    <!-- Boutton description Collapse -->
+      <div>
+        <div class="collapse" id="footwear">
+          <p style="color:azure">Aucune information disponible pour le moment</p>
+        </div>
+      </div>
+
       <form>
           <div class="form-group">
-            <label for="Cotisations">Montant total de vos Cotisations professionnelles :</label>
+            <label style="color:azure" for="Cotisations">Montant total de vos Cotisations professionnelles :</label>
             <input [(ngModel)]="actuelFrais.MontantCotisationPro"  name="MontantCotisationPro"style="width: 20%" type="text" class='form-control' id="Cotisations" >
           </div>
             <div class="form-group">
-                <h2 >Total défiscalisable : </h2>
+                <h2 style="color:azure" >Total défiscalisable : </h2>
                 <h2  style="color: azure">{{actuelFrais.MontantCotisationPro}}</h2>
             </div>
             <button class="btn btn-success" routerLink="/listing" type="submit">Enregistrer</button>
