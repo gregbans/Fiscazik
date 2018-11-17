@@ -2,7 +2,7 @@
 <div class="col-sm-8 col-sm-offset-2">
     <h2>Mes voitures</h2>
     <div class="list-group">
-      <button
+      <div
         class="list-group-item"
         *ngFor="let vehicule of vehicules; let i = index"
         (click)="onViewVehicule(i)">
@@ -14,7 +14,8 @@
         </h3>
         <p class="list-group-item-text">{{ vehicule.modele }}</p>
         <p class="list-group-item-text">{{ vehicule.puissance }} CF</p>
-      </button>
+      </div>
+      <span *ngIf="vehicules.length == 0">Aucun vehicule enregistré</span>
     </div>
   </div>
 

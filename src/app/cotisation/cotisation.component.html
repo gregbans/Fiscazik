@@ -16,13 +16,13 @@
       <form>
           <div class="form-group">
             <label style="color:azure" for="Cotisations">Montant total de vos Cotisations professionnelles :</label>
-            <input [(ngModel)]="actuelFrais.MontantCotisationPro"  name="MontantCotisationPro"style="width: 20%" type="text" class='form-control' id="Cotisations" >
+            <input (change)="calculer()" [(ngModel)]="actuelFrais.montantCotisationPro.montantCotisationPro"  name="MontantCotisationPro"style="width: 20%" type="text" class='form-control' id="Cotisations" >
           </div>
             <div class="form-group">
                 <h2 style="color:azure" >Total défiscalisable : </h2>
-                <h2  style="color: azure">{{actuelFrais.MontantCotisationPro}}</h2>
+                <h2  style="color: azure">{{actuelFrais.montantCotisationPro.total}}</h2>
             </div>
-            <button class="btn btn-success" routerLink="/listing" type="submit">Enregistrer</button>
+            <button class="btn btn-success" routerLink="/listing" (click)="onValidate()" type="submit">Enregistrer</button>
         </form>
       </div>
   </div>

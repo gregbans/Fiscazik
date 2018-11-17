@@ -39,7 +39,7 @@
           <label style="color:azure" for="surfacePro">Surface pro :</label>
                   <input (change)="calculer()" [(ngModel)]="actuelFrais.montantSurfacePro.SurfacePro"  name="SurfacePro" style="width: 20%"type="text" class='form-control' id="surfacepro" >
               <h2 style="color:azure" >Total défiscalisable :</h2>
-              <h2 style="color: azure">{{leresultat}}</h2>
+              <h2 style="color: azure">{{actuelFrais.montantSurfacePro.total}}</h2>
               <button class="btn btn-success" routerLink="/listing" type="submit">Enregistrer</button>
   </div>
 </div>

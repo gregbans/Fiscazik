@@ -15,6 +15,7 @@ export class AuthService {
       (resolve, reject)=>{
         firebase.auth().createUserWithEmailAndPassword(email, password).then(
           ()=>{
+            localStorage.setItem('email', email)
             resolve();
           },
           (error)=>{

@@ -13,7 +13,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class VehiculeComponent implements OnInit, OnDestroy {
 
-vehicules : Vehicule[];
+vehicules : Vehicule[] = [];
 vehiculesSubscription: Subscription;
 vehiculeForm: FormGroup;
 
@@ -24,13 +24,15 @@ vehiculeForm: FormGroup;
 
   ngOnInit() {
     this.initForm();
-    this.vehiculesSubscription = this.vehiculeService.vehiculeSubject.subscribe(
-      (vehicules:Vehicule[])=>{
-        this.vehicules = vehicules;
+    this.vehiculeService.getVehicules().subscribe(
+      (res: any) => {
+        console.log(' vehiculeComponent ngOnInit res', res);
+        this.vehicules = res;
+      },
+      (error: any)=>{
+        console.log('vehiculeComponent ngOnInit error', error);
       }
-    );
-    this.vehiculeService.getVehicules();
-    this.vehiculeService.emitVehicules();
+    )
   }
 
   initForm(){
@@ -64,9 +66,24 @@ vehiculeForm: FormGroup;
     const modele = this.vehiculeForm.get('modele').value;
     const puissance = this.vehiculeForm.get('puissance').value;
     const newVehicule = new Vehicule(marque, modele, puissance );
-    this.vehiculeService.createNewVehicule(newVehicule);
-    debugger;
-    this.router.navigate(['/vehicule']);
-    }
+    this.vehiculeService.addVehicule(newVehicule).subscribe
+        (success => {
+          console.log('vehiculecomponent addVehicule success');
+          console.log(success);
+          this.vehiculeService.getVehicules().subscribe(
+            (res: any) => {
+              console.log(' vehiculeComponent ngOnInit res', res);
+              this.vehicules = res;
+            },
+            (error: any)=>{
+              console.log('vehiculeComponent ngOnInit error', error);
+            }
+          )
+      }, error => {
+        console.log('vehiculecomponent addVehicule error');
+        console.log(error);
+      }
+    );
+  }
 
 }

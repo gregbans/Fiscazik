@@ -32,10 +32,13 @@
           </div>
 
           <div class="form-group">
-            <h3 style="color:azure" class="col-xs-12" [(ngModel)]="actuelFrais.montantRepas.Total" name="montantDefRepas">Total défiscalisable : <span style="color: azure">{{leresultat}}</span></h3>
+            <h3 style="color:azure" class="col-xs-12"  name="montantDefRepas">
+              Total défiscalisable : 
+              <span style="color: azure">{{actuelFrais.montantRepas.total}}</span>
+            </h3>
           </div>
           <div>
-            <button class="btn btn-success pull-right" routerLink="/listing" type="submit">Enregistrer</button>
+            <button class="btn btn-success pull-right" routerLink="/listing" (click)="onValidate()" type="submit">Enregistrer</button>
           </div> 
           </form>
       </div>

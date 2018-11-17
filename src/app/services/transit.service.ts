@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Frais, ArtisteMusiciens, MontantFraisTransports, MontantRepas, MontantRepasDep, MontantSurfacePro, MontantFraisRepresent, MontantFraisTotalDocu, MontantFraisMateriel, MontantCotisationPro, MontantAutresFrais, MontantFraisAutresFraisTrans, MontantAutresFraisTrans } from '../models/frais.model';
+import { Frais, ArtisteMusiciens, MontantFraisTransports, MontantRepas, MontantRepasDep, MontantSurfacePro, MontantFraisRepresent, MontantFraisTotalDocu, MontantFraisMateriel, MontantCotisationPro, MontantAutresFrais, MontantAutresFraisTrans } from '../models/frais.model';
 
 
 @Injectable({
@@ -43,9 +43,9 @@ setFrais(frais: Frais){
       this.fraisActuel.montantFraisTransport.nbKmSup20 = 0;
       this.fraisActuel.montantFraisTransport.total = 0;
 
-      this.fraisActuel.montantautresFraisTrans= new MontantAutresFraisTrans();
-      this.fraisActuel.montantFraisRepresent.montantFraisRepresent = 0;
-      this.fraisActuel.montantFraisRepresent.total = 0;
+      this.fraisActuel.montantautresFraisTrans = new MontantAutresFraisTrans();
+      this.fraisActuel.montantautresFraisTrans.montantAutresFraisTrans = 0;
+      this.fraisActuel.montantautresFraisTrans.total = 0;
 
       this.fraisActuel.montantRepas = new MontantRepas();
       this.fraisActuel.montantRepas.montantTotalRepas = 0;

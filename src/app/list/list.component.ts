@@ -17,23 +17,34 @@ export class ListComponent implements OnInit {
 
   dataStock: any[]= [];
 
-  taux: any[];
-
-  constructor(public listingService: ListingService,private bs: BaremesService, private transitService : TransitService  ) {
+  constructor(public listingService: ListingService,
+              private bs: BaremesService,
+              private transitService : TransitService) {
     this.fraisActuel = this.transitService.getFrais();
   }
 
   ngOnInit() {
-
-    this.bs.setBareme(0).subscribe(
+    this.bs.getBaremes().subscribe(
       (res: any) => {
-        this.bs.getBaremes().subscribe(
-          (res: any) => {
-            console.log('updated demande', res[14]);
-          }
-        )
+        console.log('ListComponent ngOnInit res', res);
+      },
+      (error:any)=>{
+        console.log('ListComponent ngOnInit error', error);
       }
     )
+    // this.bs.setBareme(0).subscribe(
+    //   (res: any) => {
+    //     this.bs.getBaremes().subscribe(
+    //       (res: any) => {
+    //         console.log('ListComponent ngOnInit res', res);
+    //       },
+    //       (error:any)=>{
+    //         console.log('ListComponent ngOnInit error', error);
+    //       }
+    //     )
+    //   }
+    // )
+    
     this.fraisActuel = this.transitService.getFrais();
     console.log("ListComponent this.fraisActuel")
     console.log(this.fraisActuel)
@@ -75,19 +86,23 @@ export class ListComponent implements OnInit {
         elem.resultat = this.fraisActuel.montantAutresFrais.total;
       }
     })
+    this.SuperCalcul();
   }
 
-  // superTotal = 
-  // Number(this.fraisActuel.montantArtisteMusiciens.total) +
-  // Number(this.fraisActuel.montantFraisRepresent.total) +
-  // Number(this.fraisActuel.montantFraisTransport.total)+
-  // Number(this.fraisActuel.montantautresFraisTrans.total) +
-  // Number(this.fraisActuel.montantRepas.total) +
-  // Number(this.fraisActuel.montantRepasDep.total) +
-  // Number(this.fraisActuel.montantFraisTotalDocu.total) +
-  // Number(this.fraisActuel.montantSurfacePro.total) +
-  // Number(this.fraisActuel.montantFraisMateriel.total) +
-  // Number(this.fraisActuel.montantCotisationPro.total) +
-  // Number(this.fraisActuel.montantAutresFrais.total);
+  SuperCalcul(){
+    this.SuperTotal =
+    Number(this.fraisActuel.montantArtisteMusiciens.total) +
+    Number(this.fraisActuel.montantFraisRepresent.total) +
+    Number(this.fraisActuel.montantFraisTransport.total)+
+    Number(this.fraisActuel.montantautresFraisTrans.total) +
+    Number(this.fraisActuel.montantRepas.total) +
+    Number(this.fraisActuel.montantRepasDep.total) +
+    Number(this.fraisActuel.montantFraisTotalDocu.total) +
+    Number(this.fraisActuel.montantSurfacePro.total) +
+    Number(this.fraisActuel.montantFraisMateriel.total) +
+    Number(this.fraisActuel.montantCotisationPro.total) +
+    Number(this.fraisActuel.montantAutresFrais.total);
+  }
+
 
 }

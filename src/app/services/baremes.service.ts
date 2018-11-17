@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 @Injectable({
@@ -11,7 +11,22 @@ export class BaremesService {
 
 
   getBaremes(): Observable<any[]> {
-    return this.http.get<any[]>('http://bansproduction-com.mon.world/baremes');
+    const request = new HttpRequest(
+      'GET', 'http://bansproduction-com.mon.world/baremes');
+
+  return Observable.create(observer => {
+      return this.http.request(request)
+          .subscribe(success => {
+                  console.log('bareme service getBaremes success');
+                  console.log(success);
+                  observer.next(success);
+                  observer.complete();
+              }, error => {
+                  observer.error(error);
+              }
+          );
+  });
+    // return this.http.get<any[]>('http://bansproduction-com.mon.world/baremes');
   }
   getBareme(idbareme:number): Observable<any[]> {
     return this.http.get<any[]>('http://bansproduction-com.mon.world/bareme/'+idbareme+'');
