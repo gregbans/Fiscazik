@@ -10,6 +10,7 @@ import { AuthService } from '../services/auth.service';
 export class HeaderComponent implements OnInit {
 
   isAuth: boolean;
+  isAdmin: boolean;
 
   constructor(private authService: AuthService) { }
 

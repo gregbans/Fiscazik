@@ -7,7 +7,11 @@ import { promise } from 'protractor';
 })
 export class AuthService {
 
+
+
   constructor() { }
+
+  isAdmin: Boolean;
 
 // creation d'un nouvel utilisateur dans la db firebase
   createNewUser(email: string, password: string){
@@ -48,5 +52,11 @@ export class AuthService {
     firebase.auth().signOut();
   }
 
+
+  SignAdmin(email: string, isAuth: boolean){
+    if(isAuth == true && email == "gregory.bannier@gmail.com"){
+      this.isAdmin = true;
+    }
+  }
 
 }

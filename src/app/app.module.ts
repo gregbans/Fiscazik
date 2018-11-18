@@ -34,6 +34,9 @@ import { TransitService } from './services/transit.service';
 import { VehiculeService } from './services/vehicule.service';
 import { AutresFraisTransportComponent } from './autres-frais-transport/autres-frais-transport.component';
 
+import { BaremesComponent } from './admin/baremes/baremes.component';
+import { UsersComponent } from './admin/users/users.component';
+
 
 
 const appRoutes: Routes = [
@@ -55,6 +58,8 @@ const appRoutes: Routes = [
   {path: 'materiel', canActivate:[AuthGuardService], component: MaterielComponent},
   {path: 'cotisation', canActivate:[AuthGuardService], component: CotisationComponent},
   {path: 'autres_frais', canActivate:[AuthGuardService], component: AutresFraisComponent},
+  {path: 'admin_baremes', canActivate:[AuthGuardService], component: BaremesComponent},
+  {path: 'admin_users', canActivate:[AuthGuardService], component: UsersComponent},
   {path: '', redirectTo: 'listing', pathMatch: 'full'},
   {path: '**', redirectTo: 'listing'}
 ]
@@ -82,6 +87,8 @@ const appRoutes: Routes = [
     CotisationComponent,
     AutresFraisComponent,
     AutresFraisTransportComponent,
+    BaremesComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
