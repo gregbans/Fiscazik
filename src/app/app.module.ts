@@ -36,6 +36,7 @@ import { AutresFraisTransportComponent } from './autres-frais-transport/autres-f
 
 import { BaremesComponent } from './admin/baremes/baremes.component';
 import { UsersComponent } from './admin/users/users.component';
+import { IsAdminGuardService } from './services/is-admin-guard.service.1';
 
 
 
@@ -58,8 +59,8 @@ const appRoutes: Routes = [
   {path: 'materiel', canActivate:[AuthGuardService], component: MaterielComponent},
   {path: 'cotisation', canActivate:[AuthGuardService], component: CotisationComponent},
   {path: 'autres_frais', canActivate:[AuthGuardService], component: AutresFraisComponent},
-  {path: 'admin_baremes', canActivate:[AuthGuardService], component: BaremesComponent},
-  {path: 'admin_users', canActivate:[AuthGuardService], component: UsersComponent},
+  {path: 'admin_baremes', canActivate:[AuthGuardService, IsAdminGuardService], component: BaremesComponent},
+  {path: 'admin_users', canActivate:[AuthGuardService, IsAdminGuardService], component: UsersComponent},
   {path: '', redirectTo: 'listing', pathMatch: 'full'},
   {path: '**', redirectTo: 'listing'}
 ]
@@ -100,6 +101,7 @@ const appRoutes: Routes = [
   ],
   providers: [,
     AuthGuardService,
+    IsAdminGuardService,
     AuthService,
     ListingService,
     BaremesService,

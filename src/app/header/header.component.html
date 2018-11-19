@@ -23,10 +23,10 @@
         <li routerLinkActive="active" >
           <a routerLink="tuto" >Tuto</a>
       </li>
-      <li routerLinkActive="active" *ngIf="isAuth">
+      <li routerLinkActive="active" *ngIf="isAuth && isAdmin">
           <a routerLink="admin_users" >Users</a>
       </li>
-      <li routerLinkActive="active" *ngIf="isAuth">
+      <li routerLinkActive="active" *ngIf="isAuth && isAdmin">
           <a routerLink="admin_baremes" >Barêmes</a>
       </li>
           </ul>

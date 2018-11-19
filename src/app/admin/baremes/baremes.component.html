@@ -1,15 +1,40 @@
 
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <h2 style="color:azure" > Compte utilisateur : </h2> 
+      <h2 style="color:azure" > Baremes : </h2> 
       <h3 style="color: white">ATTENTION aprés validation vos données seront sauvegardé et ne seront plus modifiables.</h3>
   
       <div class="list-group">
-          <div
-            class="list-group-item">
-            <div>{{elem.id}} ID</div>
-            <div>{{elem.email}} Email</div>
-            <button class="btn btn-danger " routerLink="/tuto" type="submit">supprimer  <span class="glyphicon glyphicon-floppy-save"></span></button>
-          </div>
+          <label style="color: white" for="">1  Artiste musicien </label>
+            <h3 style="color: white">Remuneration: <input type='text' placeholder="{{actuelTaux2}}"></h3>
+            <h3 style="color: white"> Allocation : <input type='text' placeholder="{{actuelTaux3}}"></h3><br>
+
+            <label style="color: white" for="">5 - Repas </label>
+            <h3 style="color: white">Repas : <input type='text' placeholder="{{actuelTaux}}"></h3><br>
+
+            <label style="color: white" for="">3 - Barêmes KMs (* en milliers de Kms):</label>
+            <h3 style="color: white">3CV kms inf 5 : <input type='text' placeholder="{{actuelTaux1}}"></h3>
+            <h3 style="color: white">3CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux4}}"></h3>
+            <h3 style="color: white">3CV kms sup 20: <input type='text' placeholder="{{actuelTaux5}}"></h3><br>
+
+            <h3 style="color: white">4CV kms inf 5 : <input type='text' placeholder="{{actuelTaux6}}"></h3>
+            <h3 style="color: white">4CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux7}}"></h3>
+            <h3 style="color: white">4CV kms sup 20: <input type='text' placeholder="{{actuelTaux8}}"></h3><br>
+
+            <h3 style="color: white">5CV kms inf 5 : <input type='text' placeholder="{{actuelTaux9}}"></h3>
+            <h3 style="color: white">5CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux10}}"></h3>
+            <h3 style="color: white">5CV kms sup 20: <input type='text' placeholder="{{actuelTaux11}}"></h3><br>
+
+            <h3 style="color: white">6CV kms inf 5 : <input type='text' placeholder="{{actuelTaux12}}"></h3>
+            <h3 style="color: white">6CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux13}}"></h3>
+            <h3 style="color: white">6CV kms sup 20: <input type='text' placeholder="{{actuelTaux14}}"></h3><br>
+
+            <h3 style="color: white">7CV kms inf 5 : <input type='text' placeholder="{{actuelTaux15}}"></h3>
+            <h3 style="color: white">7CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux16}}"></h3>
+            <h3 style="color: white">7CV kms sup 20: <input type='text' placeholder="{{actuelTaux17}}"></h3>
+
+
+          <button class="btn btn-success " routerLink="/tuto" type="submit">Valider <span class="glyphicon glyphicon-fire"></span></button>
+      </div> 
       </div> 
     </div>
