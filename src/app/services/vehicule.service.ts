@@ -23,13 +23,6 @@ vehiculeSubject = new Subject <Vehicule[]>()
   firebase.database().ref('/vehicules').set(this.vehicules);
   }
 
-// getVehicules(){
-//   firebase.database().ref('/vehicules')
-//     .on('value', (data)=>{
-//       this.vehicules = data.val() ? data.val() : [];
-//       this.emitVehicules();
-//   });
-// }
   getVehicules(): Observable<any[]> {
   return Observable.create(observer => {
       return this.http.get<any[]>('http://bansproduction-com.mon.world/vehicules/'+localStorage.getItem("email"))
@@ -49,7 +42,6 @@ vehiculeSubject = new Subject <Vehicule[]>()
 
   addVehicule(vehicule: Vehicule): Observable<any[]> {
     return Observable.create(observer => {
-        // return this.http.request(request)
         return this.http.get<any[]>('http://bansproduction-com.mon.world/setVehicule/'+ vehicule.marque+"/"+vehicule.modele+"/"+vehicule.puissance+"/"+localStorage.getItem("email"))
             .subscribe(success => {
                     console.log('vehiculeservice addVehicule success');
@@ -63,23 +55,37 @@ vehiculeSubject = new Subject <Vehicule[]>()
                 }
             );
     });
-      // return this.http.get<any[]>('http://bansproduction-com.mon.world/baremes');
-    }
-  
-
-  getSingleVehicule(id: number) {
-    return new Promise(
-      (resolve, reject)=>{
-        firebase.database().ref('/vehicules/' + id).once('value').then(
-          (data)=>{
-            resolve(data.val());
-          },(error)=>{
-            reject(error);
-          }
-          );
-      }
-    );
   }
+  
+  deleteVehicule(vehicule: Vehicule): Observable<any[]> {
+    return Observable.create(observer => {
+        return this.http.get<any[]>('http://bansproduction-com.mon.world/deleteVehicule/'+ vehicule.marque+"/"+vehicule.modele+"/"+vehicule.puissance+"/"+localStorage.getItem("email"))
+            .subscribe(success => {
+                    console.log('vehiculeservice deleteVehicule success');
+                    console.log(success);
+                    observer.next(success);
+                    observer.complete();
+                }, error => {
+                  console.log('vehiculeservice deleteVehicule error');
+                    console.log(error);
+                    observer.error(error);
+                }
+            );
+    });
+  }
+  // getSingleVehicule(id: number) {
+  //   return new Promise(
+  //     (resolve, reject)=>{
+  //       firebase.database().ref('/vehicules/' + id).once('value').then(
+  //         (data)=>{
+  //           resolve(data.val());
+  //         },(error)=>{
+  //           reject(error);
+  //         }
+  //         );
+  //     }
+  //   );
+  // }
 
   createNewVehicule(newVehicule: Vehicule){
     this.vehicules.push(newVehicule);
@@ -96,6 +102,7 @@ vehiculeSubject = new Subject <Vehicule[]>()
         }
       }
     );
+
     this.vehicules.splice(vehiculeIndexToRemove,1);
     this.saveVehicules();
     this.emitVehicules();

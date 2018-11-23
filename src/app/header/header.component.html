@@ -1,6 +1,7 @@
 <nav class="navbar navbar-default navbar-static-top"> 
   <div class="container-fluid"> 
     <div class="navbar-header"> 
+      <!-- bouton burger de collapse -->
       <button type="button" class="collapsed navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-8" aria-expanded="false"> 
         <span class="sr-only">Toggle navigation</span> 
         <span class="icon-bar"></span> 
@@ -9,38 +10,41 @@
       </button>
     </div> 
       
+    <!-- nav-bar -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
-        <ul class="nav navbar-nav" *ngIf="isAuth">
-            <li routerLinkActive="active" >
-              <a routerLink="listing" >Liste</a>
-            </li>
-            <li routerLinkActive="active" >
-              <a routerLink="vehicule" >Vehicule</a>
-          </li>
-          <li routerLinkActive="active" >
-            <a routerLink="archive" >Archive</a>
+      <ul class="nav navbar-nav" *ngIf="isAuth">
+        <li routerLinkActive="active" >
+          <a routerLink="listing" >Liste</a>
+        </li>
+        <li routerLinkActive="active" >
+          <a routerLink="vehicule" >Vehicule</a>
+        </li>
+        <li routerLinkActive="active" >
+          <a routerLink="archive" >Archive</a>
         </li>
         <li routerLinkActive="active" >
           <a routerLink="tuto" >Tuto</a>
-      </li>
-      <li routerLinkActive="active" *ngIf="isAuth && isAdmin">
-          <a routerLink="admin_users" >Users</a>
-      </li>
-      <li routerLinkActive="active" *ngIf="isAuth && isAdmin">
-          <a routerLink="admin_baremes" >Barêmes</a>
-      </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-              <li routerLinkActive="active" *ngIf="!isAuth">
-                <a routerLink="auth/signup">Créer un compte</a>
-              </li>
-              <li routerLinkActive="active" *ngIf="!isAuth">
-                <a routerLink="auth/signin">connexion</a>
-              </li>
-              <li>
-                <a (click)="onSignOut()" *ngIf="isAuth" style="cursor: pointer">Déconnexion</a>
-              </li>
-            </ul>
+        </li>
+        <li  routerLinkActive="active" *ngIf="isAuth && isAdmin">
+          <a style="color: red" routerLink="admin_users" >Users</a>
+        </li>
+        <li routerLinkActive="active" *ngIf="isAuth && isAdmin">
+          <a style="color: red"  routerLink="admin_baremes" >Barêmes</a>
+        </li>
+      </ul>
+
+              <!-- Nav bar de droite -->
+        <ul class="nav navbar-nav navbar-right">
+          <li routerLinkActive="active" *ngIf="!isAuth">
+            <a routerLink="auth/signup">Créer un compte</a>
+          </li>
+          <li routerLinkActive="active" *ngIf="!isAuth">
+            <a routerLink="auth/signin">connexion</a>
+          </li>
+          <li>
+            <a (click)="onSignOut()" *ngIf="isAuth" style="cursor: pointer">Déconnexion</a>
+          </li>
+        </ul>
     </div>
     </div> 
   </nav>

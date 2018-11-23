@@ -14,16 +14,12 @@ export class IsAdminGuardService implements CanActivate {
   canActivate(): Observable<boolean> | Promise<boolean> | boolean {
     return new Promise(
       (resolve, reject) => {
-        // firebase.auth().onAuthStateChanged(
-          // (user)=>{
             if(this.authService.getIsAdmin()){
               resolve(true);
             }else{
               this.router.navigate(['/listing']);
               resolve(false);
             }
-          // }
-        // );
       }
     )
   }

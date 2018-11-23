@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { Km } from '../models/km.model';
 import { TransitService } from '../services/transit.service';
 import { Frais } from '../models/frais.model';
+import { VehiculeService } from '../services/vehicule.service';
+import { Vehicule } from '../models/vehicule.model';
 
 @Component({
   selector: 'app-km',
@@ -13,6 +15,7 @@ import { Frais } from '../models/frais.model';
   styleUrls: ['./km.component.scss']
 })
 export class KmComponent implements OnInit, OnDestroy {
+  
   Kms : Km[];
   kmsSubscription: Subscription;
   kmForm: FormGroup;
@@ -24,57 +27,82 @@ export class KmComponent implements OnInit, OnDestroy {
   lecalcul5_20=0;
   lecalcul20=0;
   leresultat=0;
+
+vehicules : Vehicule[] = [];
+// vehiculeForm: FormGroup;
   
   constructor(private kmService: KmService,
               private router: Router,
               private formBuilder: FormBuilder,
-              public transitService: TransitService) { 
-    this.actuelFrais=transitService.getFrais();
+              public transitService: TransitService,
+              private vehiculeService : VehiculeService) { 
+
+    this.actuelFrais=transitService.getFrais();`
+`
+    this.vehiculeService.getVehicules().subscribe(
+      (res: any) => {
+        console.log(' vehiculeComponent ngOnInit res', res);
+        this.vehicules = res;
+      },
+      (error: any)=>{
+        console.log('vehiculeComponent ngOnInit error', error);
+      }
+    )
   }
   
-    ngOnInit() {
-      this.initForm();
-      this.kmsSubscription = this.kmService.kmSubject.subscribe(
-        (kms:Km[])=>{
-          this.Kms = kms;
-        }
-      );
-      this.kmService.getKms();
-      this.kmService.emitKms();
-    }
+  ngOnInit() {
+    // this.initForm();
+    // this.kmsSubscription = this.kmService.kmSubject.subscribe(
+    //   (kms:Km[])=>{
+    //     this.Kms = kms;
+    //   }
+    // );
+
+    this.vehiculeService.getVehicules().subscribe(
+      (res: any) => {
+        console.log(' vehiculeComponent ngOnInit res', res);
+        this.vehicules = res;
+      },
+      (error: any)=>{
+        console.log('vehiculeComponent ngOnInit error', error);
+      });
+    // this.kmService.getKms();
+    // this.kmService.emitKms();
+  }
   
-    initForm(){
-      this.kmForm = this.formBuilder.group(
-      {
-      trajet5000: [+'', Validators.required],
-      trajet5_20: [+'', Validators.required],
-      trajet20: [+'', Validators.required],
-      }
-      )}
+  // initForm(){
+  //   this.initForm();
+  //   this.kmForm = this.formBuilder.group(
+  //   {
+  //   trajet5000: [+'', Validators.required],
+  //   trajet5_20: [+'', Validators.required],
+  //   trajet20: [+'', Validators.required],
+  //   }
+  //   )}
   
     ngOnDestroy(){
-      this.kmsSubscription.unsubscribe();
+      // this.kmsSubscription.unsubscribe();
     }
   
-    calculer() {
-      this.lecalcul5 = Number(this.actuelFrais.montantFraisTransport.nbKmInf5) * 5;
-      this.lecalcul5_20= Number(this.actuelFrais.montantFraisTransport.nbKm5_20) * 5;
-      this.lecalcul20 =Number(this.actuelFrais.montantFraisTransport.nbKmSup20) * 5;
-      
-      this.leresultat = Number(this.actuelFrais.montantFraisTransport.nbKmInf5) + 
-                        Number(this.actuelFrais.montantFraisTransport.nbKm5_20) +
-                        Number(this.actuelFrais.montantFraisTransport.nbKmSup20);
-      
-      ;
-    }
+  calculer() {
+    this.lecalcul5 = Number(this.actuelFrais.montantFraisTransport.nbKmInf5) * 5;
+    this.lecalcul5_20= Number(this.actuelFrais.montantFraisTransport.nbKm5_20) * 5;
+    this.lecalcul20 =Number(this.actuelFrais.montantFraisTransport.nbKmSup20) * 5;
+    
+    this.leresultat = Number(this.actuelFrais.montantFraisTransport.nbKmInf5) + 
+                      Number(this.actuelFrais.montantFraisTransport.nbKm5_20) +
+                      Number(this.actuelFrais.montantFraisTransport.nbKmSup20);
+    ;
+  }
+
+    
 
 
     onSaveKm(){
-      const trajet5000 = this.kmForm.get('trajet5000').value;
-      const trajet5_20 = this.kmForm.get('trajet5_20').value;
-      const trajet20 = this.kmForm.get('trajet20').value;
-      this.router.navigate(['/listing']);
+      // const trajet5000 = this.kmForm.get('trajet5000').value;
+      // const trajet5_20 = this.kmForm.get('trajet5_20').value;
+      // const trajet20 = this.kmForm.get('trajet20').value;
+      // this.router.navigate(['/listing']);
       }
   
   }
-  

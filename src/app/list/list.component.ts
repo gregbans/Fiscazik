@@ -32,18 +32,6 @@ export class ListComponent implements OnInit {
         console.log('ListComponent ngOnInit error', error);
       }
     )
-    // this.bs.setBareme(0).subscribe(
-    //   (res: any) => {
-    //     this.bs.getBaremes().subscribe(
-    //       (res: any) => {
-    //         console.log('ListComponent ngOnInit res', res);
-    //       },
-    //       (error:any)=>{
-    //         console.log('ListComponent ngOnInit error', error);
-    //       }
-    //     )
-    //   }
-    // )
     
     this.fraisActuel = this.transitService.getFrais();
     console.log("ListComponent this.fraisActuel")
@@ -86,6 +74,7 @@ export class ListComponent implements OnInit {
         elem.resultat = this.fraisActuel.montantAutresFrais.total;
       }
     })
+    
     this.SuperCalcul();
   }
 

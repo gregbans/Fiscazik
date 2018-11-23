@@ -4,18 +4,27 @@
       <h2 style="color:azure" > Baremes : </h2> 
       <h3 style="color: white">ATTENTION aprés validation vos données seront sauvegardé et ne seront plus modifiables.</h3>
   
-      <div class="list-group">
-          <label style="color: white" for="">1  Artiste musicien </label>
-            <h3 style="color: white">Remuneration: <input type='text' placeholder="{{actuelTaux2}}"></h3>
-            <h3 style="color: white"> Allocation : <input type='text' placeholder="{{actuelTaux3}}"></h3><br>
+      <div class="form-group">
+          <h2 style="color: white" for="">1  Artiste musicien </h2>
 
-            <label style="color: white" for="">5 - Repas </label>
+            <h3 class="col-xs-4" style="color: white">Remuneration: </h3>
+                <div class="col-xs-8">
+                  <input type='text' placeholder="{{actuelTaux2}}">
+                </div>
+
+            <h3 class="col-xs-4" style="color: white"> Allocation : </h3>
+                <div class="col-xs-8">
+                  <input type='text' placeholder="{{actuelTaux3}}">
+                </div>
+              <br>
+
+            <h2 class="col-xs-4" style="color: white" for="">5 - Repas </h2>
             <h3 style="color: white">Repas : <input type='text' placeholder="{{actuelTaux}}"></h3><br>
 
-            <label style="color: white" for="">3 - Barêmes KMs (* en milliers de Kms):</label>
-            <h3 style="color: white">3CV kms inf 5 : <input type='text' placeholder="{{actuelTaux1}}"></h3>
-            <h3 style="color: white">3CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux4}}"></h3>
-            <h3 style="color: white">3CV kms sup 20: <input type='text' placeholder="{{actuelTaux5}}"></h3><br>
+            <h2 class="col-xs-4" style="color: white" for="">3 - Barêmes KMs (* en milliers de Kms):</h2>
+            <h3 class="col-xs-4" style="color: white">3CV kms inf 5 : <input type='text' placeholder="{{actuelTaux1}}"></h3>
+            <h3 class="col-xs-4" style="color: white">3CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux4}}"></h3>
+            <h3 class="col-xs-4"style="color: white">3CV kms sup 20: <input type='text' placeholder="{{actuelTaux5}}"></h3><br>
 
             <h3 style="color: white">4CV kms inf 5 : <input type='text' placeholder="{{actuelTaux6}}"></h3>
             <h3 style="color: white">4CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux7}}"></h3>

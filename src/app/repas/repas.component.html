@@ -6,7 +6,6 @@
         </button>
       </h2> 
   
-  
       <!-- Boutton description Collapse -->
         <div>
           <div class="collapse" id="footwear">
@@ -14,23 +13,19 @@
           </div>
         </div>
 
-    
       <form class="form-horizontal">
-
           <div class="form-group">
             <label style="color:azure" for="Reas_total" class="col-xs-4 control-label">Montant Total :</label>
             <div class="col-xs-8">
               <input (change)="calculer()" [(ngModel)]="actuelFrais.montantRepas.montantTotalRepas" name="montantTotalRepas" type="text" class='form-control' id="Reaps_total" >
             </div>          
           </div>
-
           <div class="form-group">
             <label style="color:azure" for="nb_repas" class="col-xs-4 control-label">Nombre de repas :</label>
             <div class="col-xs-8">
               <input (change)="calculer()" [(ngModel)]="actuelFrais.montantRepas.nombreRepas" name="montantTotalRepas" type="text" class='form-control' id="nb_repas" >
             </div>
           </div>
-
           <div class="form-group">
             <h3 style="color:azure" class="col-xs-12"  name="montantDefRepas">
               Total défiscalisable : 

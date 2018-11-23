@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Vehicule } from '../models/vehicule.model';
+import { Observable } from 'rxjs';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { VehiculeService } from '../services/vehicule.service';
@@ -44,17 +45,20 @@ vehiculeForm: FormGroup;
     )
     }
 
-  // onNewVehicule(){
-  //   this.router.navigate(['/vehicule', 'new']); // a verifier si faut pas faire sauter le route 'new'
-  // }
-
-  onDeleteVehicule(vehicule: Vehicule){
-    this.vehiculeService.removeVehicule(vehicule);
-  }
-
-  // onViewVehicule(id: number){
-  //   this.router.navigate(['/vehicule', 'view', id]); // a verifier si faut pas faire sauter le route 'view'
-  // }
+//   deleteVehicule(vehicule: Vehicule): Observable<any[]>{
+//     this.vehiculeService.deleteVehicule(vehicule).subscribe
+//     (success => {
+//       console.log('vehiculeservice deleteVehicule success');
+//       console.log(success);
+//       observer.next(success);
+//       observer.complete();
+//   }, error => {
+//     console.log('vehiculeservice deleteVehicule error');
+//       console.log(error);
+//       observer.error(error);
+//   }
+// );
+//   }
 
   ngOnDestroy(){
   }

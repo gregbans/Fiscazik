@@ -13,6 +13,7 @@ fraisActuel: Frais;
 getFrais(){
   return this.fraisActuel;
 }
+
 setFrais(frais: Frais){
   this.fraisActuel= frais;
   localStorage.setItem("sauvegardeFrais" + localStorage.getItem("email"), JSON.stringify(this.fraisActuel));
@@ -20,11 +21,20 @@ setFrais(frais: Frais){
 
   
   constructor() { 
+    this.init();
+  }
+
+  init(force = false){
     if(localStorage.getItem("email")!= undefined && localStorage.getItem("sauvegardeFrais"+ localStorage.getItem("email"))!= undefined){
       this.fraisActuel=JSON.parse(localStorage.getItem("sauvegardeFrais" + localStorage.getItem("email")))
     }
-    if(this.fraisActuel === undefined){
-      this.fraisActuel=new Frais();
+    if(this.fraisActuel === undefined || force){
+      this.reset();
+    }
+  }
+
+  reset(){
+    this.fraisActuel=new Frais();
       // this.fraisActuel.montantSuperTotal = 0;
 
       this.fraisActuel.montantArtisteMusiciens= new ArtisteMusiciens();
@@ -78,7 +88,7 @@ setFrais(frais: Frais){
       this.fraisActuel.montantAutresFrais = new MontantAutresFrais();
       this.fraisActuel.montantAutresFrais.montantAutresFrais=0;
       this.fraisActuel.montantAutresFrais.total=0;
-    }
+
   }
   
 }
