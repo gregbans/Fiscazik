@@ -32,6 +32,15 @@ export class BaremesComponent implements OnInit {
 
   onSubmit(event){
     console.log("baremeComponent submit", this.baremes)
+    this.baremeService.updateBaremes(this.baremes).subscribe(
+      (res: any) => {
+        this.baremes = res;
+        console.log('baremeComponent ngOnInit res', this.baremes);
+      },
+      (error: any)=>{
+        console.log('baremeComponent ngOnInit error', error);
+      }
+    )
     
   }
 
