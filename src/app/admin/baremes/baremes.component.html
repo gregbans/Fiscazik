@@ -4,46 +4,47 @@
       <h2 style="color:azure" > Baremes : </h2> 
       <h3 style="color: white">ATTENTION aprés validation vos données seront sauvegardé et ne seront plus modifiables.</h3>
   
-      <div class="form-group">
-          <h2 style="color: white" for="">1  Artiste musicien </h2>
+          <!-- <h2 style="color: white" for="">1  Artiste musicien </h2>
+          <input type='text' placeholder="{{baremes[18].valeur_bareme}}"><br> -->
+            
+        <div *ngFor="let bareme of baremes" >
+          <h3 style="color: white">{{bareme.label}} </h3>
+          <input type='text' [(ngModel)]="bareme.valeur_bareme">
+          <br>
+        </div>
+<!-- 
+            <h3 style="color: white">Remuneration: </h3>
+                  <input type='text' (change)="baremeChange()" placeholder="{{baremes[2].valeur_bareme}}"><br>
 
-            <h3 class="col-xs-4" style="color: white">Remuneration: </h3>
-                <div class="col-xs-8">
-                  <input type='text' placeholder="{{actuelTaux2}}">
-                </div>
-
-            <h3 class="col-xs-4" style="color: white"> Allocation : </h3>
-                <div class="col-xs-8">
-                  <input type='text' placeholder="{{actuelTaux3}}">
-                </div>
+            <h3 style="color: white"> Allocation : </h3>
+                  <input type='text' placeholder="{{baremes[3].valeur_bareme}}">
               <br>
 
-            <h2 class="col-xs-4" style="color: white" for="">5 - Repas </h2>
-            <h3 style="color: white">Repas : <input type='text' placeholder="{{actuelTaux}}"></h3><br>
+            <h2 style="color: white" for="">5 - Repas </h2>
+            <h3 style="color: white">Repas : <input type='text' placeholder="{{baremes[0].valeur_bareme}}"></h3><br>
 
-            <h2 class="col-xs-4" style="color: white" for="">3 - Barêmes KMs (* en milliers de Kms):</h2>
-            <h3 class="col-xs-4" style="color: white">3CV kms inf 5 : <input type='text' placeholder="{{actuelTaux1}}"></h3>
-            <h3 class="col-xs-4" style="color: white">3CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux4}}"></h3>
-            <h3 class="col-xs-4"style="color: white">3CV kms sup 20: <input type='text' placeholder="{{actuelTaux5}}"></h3><br>
+            <h2 style="color: white" for="">3 - Barêmes KMs (* en milliers de Kms):</h2>
+            <h3 style="color: white">3CV kms inf 5 : <input type='text' placeholder="{{baremes[1].valeur_bareme}}"></h3>
+            <h3 style="color: white">3CV kms entre 5 - 20 : <input type='text' placeholder="{{baremes[4].valeur_bareme}}"></h3>
+            <h3 style="color: white">3CV kms sup 20: <input type='text' placeholder="{{baremes[5].valeur_bareme}}"></h3><br>
 
-            <h3 style="color: white">4CV kms inf 5 : <input type='text' placeholder="{{actuelTaux6}}"></h3>
-            <h3 style="color: white">4CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux7}}"></h3>
-            <h3 style="color: white">4CV kms sup 20: <input type='text' placeholder="{{actuelTaux8}}"></h3><br>
+            <h3 style="color: white">4CV kms inf 5 : <input type='text' placeholder="{{baremes[6].valeur_bareme}}"></h3>
+            <h3 style="color: white">4CV kms entre 5 - 20 : <input type='text' placeholder="{{baremes[7].valeur_bareme}}"></h3>
+            <h3 style="color: white">4CV kms sup 20: <input type='text' placeholder="{{baremes[8].valeur_bareme}}"></h3><br>
 
-            <h3 style="color: white">5CV kms inf 5 : <input type='text' placeholder="{{actuelTaux9}}"></h3>
-            <h3 style="color: white">5CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux10}}"></h3>
-            <h3 style="color: white">5CV kms sup 20: <input type='text' placeholder="{{actuelTaux11}}"></h3><br>
+            <h3 style="color: white">5CV kms inf 5 : <input type='text' placeholder="{{baremes[9].valeur_bareme}}"></h3>
+            <h3 style="color: white">5CV kms entre 5 - 20 : <input type='text' placeholder="{{baremes[10].valeur_bareme}}"></h3>
+            <h3 style="color: white">5CV kms sup 20: <input type='text' placeholder="{{baremes[11].valeur_bareme}}"></h3><br>
 
-            <h3 style="color: white">6CV kms inf 5 : <input type='text' placeholder="{{actuelTaux12}}"></h3>
-            <h3 style="color: white">6CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux13}}"></h3>
-            <h3 style="color: white">6CV kms sup 20: <input type='text' placeholder="{{actuelTaux14}}"></h3><br>
+            <h3 style="color: white">6CV kms inf 5 : <input type='text' placeholder="{{baremes[12].valeur_bareme}}"></h3>
+            <h3 style="color: white">6CV kms entre 5 - 20 : <input type='text' placeholder="{{baremes[13].valeur_bareme}}"></h3>
+            <h3 style="color: white">6CV kms sup 20: <input type='text' placeholder="{{baremes[14].valeur_bareme}}"></h3><br>
 
-            <h3 style="color: white">7CV kms inf 5 : <input type='text' placeholder="{{actuelTaux15}}"></h3>
-            <h3 style="color: white">7CV kms entre 5 - 20 : <input type='text' placeholder="{{actuelTaux16}}"></h3>
-            <h3 style="color: white">7CV kms sup 20: <input type='text' placeholder="{{actuelTaux17}}"></h3>
+            <h3 style="color: white">7CV kms inf 5 : <input type='text' placeholder="{{baremes[15].valeur_bareme}}"></h3>
+            <h3 style="color: white">7CV kms entre 5 - 20 : <input type='text' placeholder="{{baremes[16]}}"></h3>
+            <h3 style="color: white">7CV kms sup 20: <input type='text' placeholder="{{baremes[17]}}"></h3> -->
 
 
-          <button class="btn btn-success " routerLink="/tuto" type="submit">Valider <span class="glyphicon glyphicon-fire"></span></button>
+          <button class="btn btn-success " (click)="onSubmit($event)" type="submit">Valider <span class="glyphicon glyphicon-fire"></span></button>
       </div> 
       </div> 
-    </div>

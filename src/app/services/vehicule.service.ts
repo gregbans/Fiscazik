@@ -59,7 +59,7 @@ vehiculeSubject = new Subject <Vehicule[]>()
   
   deleteVehicule(vehicule: Vehicule): Observable<any[]> {
     return Observable.create(observer => {
-        return this.http.get<any[]>('http://bansproduction-com.mon.world/deleteVehicule/'+ vehicule.marque+"/"+vehicule.modele+"/"+vehicule.puissance+"/"+localStorage.getItem("email"))
+        return this.http.get<any[]>('http://bansproduction-com.mon.world/deleteVehicule/'+ vehicule.id_vehicule )
             .subscribe(success => {
                     console.log('vehiculeservice deleteVehicule success');
                     console.log(success);

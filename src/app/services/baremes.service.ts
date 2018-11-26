@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpRequest } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { request } from 'https';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,8 @@ export class BaremesService {
 
 
   getBaremes(): Observable<any[]> {
-    const request = new HttpRequest(
-      'GET', 'http://bansproduction-com.mon.world/baremes');
-
   return Observable.create(observer => {
-      return this.http.request(request)
+      return this.http.get('http://bansproduction-com.mon.world/baremes')
           .subscribe(success => {
                   console.log('bareme service getBaremes success');
                   console.log(success);
@@ -28,6 +26,15 @@ export class BaremesService {
   });
     // return this.http.get<any[]>('http://bansproduction-com.mon.world/baremes');
   }
+
+  updateBaremes(baremes): Observable<any[]> {
+    // const requests = [];
+    // for (let bareme of baremes){
+    //   requests.push(this.setBareme(bareme))
+    // } 
+    // return Observable.forkJoin(requests)
+  }
+
   getBareme(idbareme:number): Observable<any[]> {
     return this.http.get<any[]>('http://bansproduction-com.mon.world/bareme/'+idbareme+'');
   }
