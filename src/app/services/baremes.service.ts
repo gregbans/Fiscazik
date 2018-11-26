@@ -12,28 +12,27 @@ export class BaremesService {
 
 
   getBaremes(): Observable<any[]> {
-  return Observable.create(observer => {
-      return this.http.get('http://bansproduction-com.mon.world/baremes')
-          .subscribe(success => {
-                  console.log('bareme service getBaremes success');
-                  console.log(success);
-                  observer.next(success);
-                  observer.complete();
-              }, error => {
-                  observer.error(error);
-              }
-          );
-  });
-    // return this.http.get<any[]>('http://bansproduction-com.mon.world/baremes');
+      return Observable.create(observer => {
+      return this.http.get('http://bansproduction-com.mon.world/baremes').subscribe(
+        success => {
+          console.log('bareme service getBaremes success');
+          console.log(success);
+          observer.next(success);
+          observer.complete();
+        },
+        error => {
+          observer.error(error);
+        });
+      });
   }
 
-  updateBaremes(baremes): Observable<any[]> {
-    // const requests = [];
-    // for (let bareme of baremes){
-    //   requests.push(this.setBareme(bareme))
-    // } 
-    // return Observable.forkJoin(requests)
-  }
+  // updateBaremes(baremes): Observable<any[]> {
+  //   // const requests = [];
+  //   // for (let bareme of baremes){
+  //   //   requests.push(this.setBareme(bareme))
+  //   // } 
+  //   // return Observable.forkJoin(requests)
+  // }
 
   getBareme(idbareme:number): Observable<any[]> {
     return this.http.get<any[]>('http://bansproduction-com.mon.world/bareme/'+idbareme+'');
