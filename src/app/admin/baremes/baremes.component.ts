@@ -41,7 +41,6 @@ export class BaremesComponent implements OnInit {
         console.log('baremeComponent ngOnInit error', error);
       }
     )
-    
   }
 
   ngOnInit() {

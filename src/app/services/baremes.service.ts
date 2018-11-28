@@ -28,9 +28,7 @@ export class BaremesService {
   }
 
   updateBaremes(baremes): Observable<any[]> {
-
       return this.http.get<any[]>('http://bansproduction-com.mon.world/updateBaremes/'+JSON.stringify(baremes)+'');
-    
   }
 
   getBareme(idbareme:number): Observable<any[]> {
