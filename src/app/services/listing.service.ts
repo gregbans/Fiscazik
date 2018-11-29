@@ -6,7 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class ListingService {
 
-    getListing(){
+  // Initialisation de la variable super total
+  SuperTotal: Number = 0;
+
+  getListing(){
       return this.listing;
     }
 

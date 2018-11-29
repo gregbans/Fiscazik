@@ -9,11 +9,13 @@ import { TransitService } from '../services/transit.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
+
 export class ListComponent implements OnInit {
 
   fraisActuel: Frais;
 
-  SuperTotal: Number = 0;
+  // on déclare la variable Supertotal sans valeur
+  SuperTotal:Number;
 
   dataStock: any[]= [];
 
@@ -24,6 +26,10 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    // On rempli avec la valeur qui est dans le service
+    this.SuperTotal = this.listingService.SuperTotal;
+
     this.bs.getBaremes().subscribe(
       (res: any) => {
         console.log('ListComponent ngOnInit res', res);
@@ -91,6 +97,10 @@ export class ListComponent implements OnInit {
     Number(this.fraisActuel.montantFraisMateriel.total) +
     Number(this.fraisActuel.montantCotisationPro.total) +
     Number(this.fraisActuel.montantAutresFrais.total);
+
+    // On met à jour la valeur dans le service
+    this.listingService.SuperTotal = this.SuperTotal;
+
   }
 
 

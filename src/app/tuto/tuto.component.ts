@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// on import le ListingService
+import { ListingService } from '../services/listing.service';
 
 @Component({
   selector: 'app-tuto',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TutoComponent implements OnInit {
 
-  constructor() { }
+  SuperTotal:Number;
+
+  constructor(private listingService: ListingService) { 
+    this.SuperTotal = listingService.SuperTotal;
+  }
 
   ngOnInit() {
   }

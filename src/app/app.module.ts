@@ -99,7 +99,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
 
   ],
-  providers: [,
+  providers: [
     AuthGuardService,
     IsAdminGuardService,
     AuthService,
@@ -109,7 +109,6 @@ const appRoutes: Routes = [
     KmService,
     TransitService,
     VehiculeService,
-    
   ],
   bootstrap: [AppComponent]
 })
