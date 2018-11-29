@@ -32,6 +32,7 @@ export class BaremesComponent implements OnInit {
 
   onSubmit(event){
     console.log("baremeComponent submit", this.baremes)
+    
     this.baremeService.updateBaremes(this.baremes).subscribe(
       (res: any) => {
         this.baremes = res;

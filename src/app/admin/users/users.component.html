@@ -4,12 +4,20 @@
         <h3 style="color: white">ATTENTION la suppression d'un compte est irreversible !</h3>
     
         <form class="form-horizontal">
-        <div  *ngFor="let email of email" class="form-group">
-          <label style="color:azure" class="col-xs-4 control-label">Email :</label>
-          <div class="col-xs-8">
-            <h4>{{email.email}}</h4>
-            <button class="btn btn-danger " (click)="deleteEmail(email)" type="submit">supprimer  <span class="glyphicon glyphicon-fire"></span></button>
-          </div>  
+        <div *ngIf="user"  class="form-group">
+          <div class="col-md-12">
+            <h4>Modifier votre compte :</h4>
+          </div>
+          <div class="col-md-12">
+            <label for="email">Email</label><br>
+            <input type="email" [(ngModel)]="user.email" name="email" #email>
+          </div>
+          <div class="col-md-3">
+              <button class="btn btn-succes " (click)="updateUser(email.value)" type="submit">Modifier  <span class="glyphicon glyphicon-fire"></span></button>
+          </div>
+          <div class="col-md-3">
+              <button class="btn btn-danger " (click)="deleteUser(user.email)" type="submit">supprimer  <span class="glyphicon glyphicon-fire"></span></button>
+          </div>
         </div>        
       </form>
     </div>
