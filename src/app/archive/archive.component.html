@@ -1,3 +1,37 @@
-<p>
-  archive works!
-</p>
+<div class="row"> 
+    <div class="col-sm-8 col-sm-offset-2">
+        <h2 style="color:lightgrey">Selectionnez une declaration :</h2>
+        <form>
+            <div >
+                <select id="diagnostic" >
+                    <option value="{{diagnostic?.date_diagnostic}}"> {{diagnostic?.date_diagnostic}}</option>
+                </select>
+            </div>
+        </form>
+        <br>
+    
+
+        <div class="list-group-item">
+            <h3 class="list-group-item-heading">
+                date de déclaration
+                <div class="pull-right" >
+                    <h4>{{diagnostic?.date_diagnostic}}</h4>
+                </div> 
+            </h3>
+
+            <div class="list-group-item" *ngFor="let elem of dataStock;">
+                <h3 class="list-group-item-heading">
+                {{elem.name}}
+                    <div class="pull-right" >
+                    <h4>{{elem.resultat}}</h4>
+                    </div> 
+                </h3>
+            </div>
+            <h3>Total defiscalisable : 
+                <div class="pull-right" >
+                    <h4 style="color:rgb(6, 193, 250)">SuperTotal</h4>
+                </div>
+            </h3>
+        </div>
+    </div>
+</div>

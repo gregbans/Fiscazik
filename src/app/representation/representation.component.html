@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+    <h2 style="color:azure" >Veuillez remplir les champs suivants : 
+        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#footwear" aria-expanded="false" aria-controls="footwear">
+            <span class="glyphicon glyphicon-info-sign"></span>
+        </button></h2> 
+    
+        <!-- Boutton description Collapse -->
+        <div>
+            <div class="collapse" id="footwear">
+                <p style="color:azure">Frais vestimentaires et de coiffure, de représentation, de communications téléphoniques professionnelles, de formation et de fournitures diverses (partitions, pupitre...)</p>
+            </div>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label style="color:azure" for="Frais_Pro">Frais professionnels :</label>
+                <input (change)="calculer()" [(ngModel)]="actuelFrais.montantFraisRepresent.montantFraisRepresent"  name="montantFraisPro" style="width: 20%" type="text" class='form-control' id="Frais_Pro" >
+            </div>
+            <div class="form-group">
+                <h2 style="color:azure" >Total défiscalisable : </h2>
+                <h2  style="color: azure">{{actuelFrais.montantFraisRepresent.total}}</h2>
+            </div>
+            <button class="btn btn-success" routerLink="/listing" (click)="onValidate()" type="submit">Enregistrer</button>
+        </form>
+    </div>
+</div>

@@ -35,7 +35,7 @@ errorMessage: string;
     const password = this.signUpForm.get('password').value;
     this.authService.createNewUser(email, password).then(
       ()=> {
-        this.router.navigate(['/listing']);
+        this.router.navigate(['/policy']);
       },
       (error)=>{
         this.errorMessage = error;

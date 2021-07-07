@@ -1,3 +1,26 @@
-<p>
-  list works!
-</p>
+
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h1  class="totalDefis" style="color: white"> Total defiscalisable : 
+          <span style="color:rgb(6, 193, 250)">{{SuperTotal}} €</span>
+        </h1>
+
+      <div class="list-group">
+        <button
+          class="list-group-item"
+          *ngFor="let elem of dataStock;"
+          routerLink="/{{elem.route}}">
+        <h3 class="list-group-item-heading">
+          {{elem.name}}
+          <div class="pull-right" >
+            <h4>{{elem.resultat}}
+              <span class="glyphicon glyphicon-record"></span>
+            </h4>
+          </div> 
+        </h3>
+        </button>
+        <h3 style="color: white">ATTENTION aprés validation vos données seront sauvegardé et ne seront plus modifiables.</h3>
+        <button class="btn btn-danger " routerLink="/tuto" type="submit">Sauvegarder mes données :  <span class="glyphicon glyphicon-floppy-save"></span></button>
+      </div>
+    </div>
+    

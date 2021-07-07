@@ -1,3 +1,51 @@
-<p>
-  km works!
-</p>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h2 style="color: white" >Selectionnez votre vehicule :
+        <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#footwear" aria-expanded="false" aria-controls="footwear">
+          <span class="glyphicon glyphicon-info-sign"></span>
+        </button>
+      </h2> 
+    
+        <!-- Boutton description Collapse -->
+      <div>
+        <div class="collapse" id="footwear">
+          <p style="color:white">Frais de transport entre le domicile et le lieux de travail.</p>
+        </div>
+      </div>
+
+          <!-- Selecteur du vehicule -->
+      <form>
+        <div class="" >
+            <!-- <label style="color:white" for="vehicule"></label> -->
+              <select class="" id="vehicule" >
+                  <option value="">selectionnez votre vehicule</option>
+                  <option  *ngFor="let vehicule of vehicules" value="{{vehicule.puissance}}"> {{vehicule.marque}} {{vehicule.modele}} {{vehicule.puissance}}</option>
+              </select>
+          </div>
+      </form>
+    </div>
+
+        <!-- formulaire de calcul -->
+  <!-- <div class="col-sm-8 col-sm-offset-2">
+    <h2 style="color: lightgrey">Indiquez les Kms parcourus par catégories : </h2>
+      <form [formGroup]="kmForm" (ngSubmit)="onSaveKm()">
+          <div class="form-group">
+            <label style="color: white" for="trajet5000">trajets inferieurs à 5000 kms :</label>
+            <input (change)="calculer()" [(ngModel)]="actuelFrais.montantFraisTransport.nbKmInf5"  name="nbKmInf5" type="text" class='form-control' id="trajet5000" formControlName="trajet5000">
+          </div>
+          <div class="form-group">
+            <label style="color: white" for="trajet5_20">trajets entre 5 000 et 20 000 kms :</label>
+            <input (change)="calculer()" [(ngModel)]="actuelFrais.montantFraisTransport.nbKm5_20"  name="nbKm5_20" type="text" class='form-control' id="trajet5_20" formControlName="trajet5_20">
+          </div>
+          <div class="form-group">
+              <label style="color: white" for="trajet20">trajets superieurs à 20 000 kms :</label>
+              <input (change)="calculer()" [(ngModel)]="actuelFrais.montantFraisTransport.nbKmSup20"  name="nbKmSup20"type="text" class='form-control' id="trajet20" formControlName="trajet20">
+            </div>
+            <div class="form-group">
+              <h2 style="color: white" class="col-sm-8 col-sm-offset-2">Total défiscalisable : 
+                <div  style="color: white">{{leresultat}}</div></h2>
+              </div>
+          <button class="btn btn-success" [disabled]='kmForm.invalid' routerLink='/listing' type="submit">Enregistrer</button>
+      </form>
+  </div> -->
+</div>

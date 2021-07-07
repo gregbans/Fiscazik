@@ -1,0 +1,17 @@
+
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+      <h2 style="color:azure" > Baremes : </h2> 
+      <h3 style="color: white">ATTENTION aprés validation vos données seront sauvegardées dans la bases de données.</h3>
+            
+        <!-- liste des Baremes -->
+      <div *ngFor="let bareme of baremes" >
+        <h3 style="color: white">{{bareme.label}} </h3>
+        <input type='text' [(ngModel)]="bareme.valeur_bareme">
+        <br>
+      </div>
+      <br>
+      
+      <button class="btn btn-success " (click)="onSubmit($event)" type="submit">Valider <span class="glyphicon glyphicon-fire"></span></button>
+  </div> 
+</div> 
